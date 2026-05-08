@@ -106,6 +106,32 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.campaign-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.campaign-details p {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.campaign-details .closing-line {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--forest);
+  font-weight: 700;
+}
+
 .panel-heading {
   display: flex;
   align-items: center;
@@ -194,6 +220,11 @@ th:last-child {
     grid-template-columns: 1fr;
     min-height: auto;
     padding: 26px;
+  }
+
+  .campaign-details {
+    grid-template-columns: 1fr;
+    padding: 22px;
   }
 
   .sync-card {
