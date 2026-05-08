@@ -1,64 +1,67 @@
+import csv
 import json
 import os
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlencode
+from urllib.request import urlopen
 from zoneinfo import ZoneInfo
-
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "data" / "leaderboard.json"
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-DEFAULT_RANGE = "'Public Leaderboard Export'!A1:C200"
+DEFAULT_SHEET_NAME = "Public Leaderboard Export"
 
 
-def load_service_account_info() -> dict:
-    raw = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON", "").strip()
-    if not raw:
-        raise RuntimeError("Missing GOOGLE_SERVICE_ACCOUNT_JSON secret.")
-    return json.loads(raw)
-
-
-def get_sheet_values() -> list[list[str]]:
+def get_public_csv_values() -> list[list[str]]:
     spreadsheet_id = os.environ.get("GOOGLE_SHEETS_SPREADSHEET_ID", "").strip()
     if not spreadsheet_id:
         raise RuntimeError("Missing GOOGLE_SHEETS_SPREADSHEET_ID secret.")
 
-    credentials = service_account.Credentials.from_service_account_info(
-        load_service_account_info(),
-        scopes=SCOPES,
-    )
-    service = build("sheets", "v4", credentials=credentials)
-    response = (
-        service.spreadsheets()
-        .values()
-        .get(
-            spreadsheetId=spreadsheet_id,
-            range=os.environ.get("GOOGLE_SHEETS_RANGE", DEFAULT_RANGE),
-            valueRenderOption="FORMATTED_VALUE",
+    sheet_name = os.environ.get("GOOGLE_SHEETS_TAB", DEFAULT_SHEET_NAME).strip()
+    query = urlencode({"tqx": "out:csv", "sheet": sheet_name})
+    url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?{query}"
+
+    with urlopen(url, timeout=30) as response:
+        if response.status != 200:
+            raise RuntimeError(f"Unable to fetch public CSV export: HTTP {response.status}")
+        payload = response.read().decode("utf-8-sig")
+
+    values = list(csv.reader(payload.splitlines()))
+    if not values or values[0][:3] != ["Rank", "Masked Name", "Total Ballots"]:
+        raise RuntimeError(
+            "Unexpected public export format. Expected columns: Rank, Masked Name, Total Ballots."
         )
-        .execute()
-    )
-    return response.get("values", [])
+
+    return values[:201]
+
+
+def parse_int(value: str, field_name: str) -> int:
+    try:
+        return int(value)
+    except ValueError as exc:
+        raise RuntimeError(f"Invalid {field_name}: {value!r}") from exc
 
 
 def parse_entries(values: list[list[str]]) -> list[dict]:
     entries = []
-    for row in values[1:]:
+    for row_number, row in enumerate(values[1:], start=2):
         if len(row) < 3:
             continue
 
         rank, masked_name, total_ballots = [item.strip() for item in row[:3]]
-        if not rank or not masked_name or not total_ballots:
+        if not rank and not masked_name and not total_ballots:
             continue
+        if not rank or not masked_name or not total_ballots:
+            if masked_name == "#REF!":
+                continue
+            raise RuntimeError(f"Incomplete leaderboard row at export row {row_number}.")
 
         entries.append(
             {
-                "rank": int(rank),
+                "rank": parse_int(rank, "rank"),
                 "maskedName": masked_name,
-                "totalBallots": int(total_ballots),
+                "totalBallots": parse_int(total_ballots, "total ballots"),
             }
         )
 
@@ -66,7 +69,7 @@ def parse_entries(values: list[list[str]]) -> list[dict]:
 
 
 def main() -> None:
-    entries = parse_entries(get_sheet_values())
+    entries = parse_entries(get_public_csv_values())
     now = datetime.now(ZoneInfo("Asia/Singapore")).isoformat(timespec="seconds")
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(

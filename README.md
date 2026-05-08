@@ -23,18 +23,19 @@ cron: "0 4,16 * * *"
 
 GitHub schedules may run a few minutes late. The site displays the timestamp from `data/leaderboard.json`.
 
-## Required Secrets
+## Required Secret
 
-Add these repository secrets before enabling the workflow:
+Add this repository secret before enabling the workflow:
 
-- `GOOGLE_SERVICE_ACCOUNT_JSON`: JSON key for a service account with read access to the spreadsheet
 - `GOOGLE_SHEETS_SPREADSHEET_ID`: the private spreadsheet ID
 
-The workflow reads only:
+The workflow reads only the public CSV export for this tab:
 
 ```text
-'Public Leaderboard Export'!A1:C200
+Public Leaderboard Export
 ```
+
+No Google service-account key is required.
 
 ## Local Check
 
