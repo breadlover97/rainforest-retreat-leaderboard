@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rainforest Retreat Leaderboard</title>
+    <meta
+      name="description"
+      content="Live ballot leaderboard for The Rainforest Retreat Giveaway."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">The Rainforest Retreat Giveaway</p>
+          <h1 id="page-title">Ballot Leaderboard</h1>
+          <p class="subcopy">
+            Track the latest ranked ballot chances for the 3D2N Rainforest Retreat
+            staycation draw.
+          </p>
+        </div>
+        <div class="sync-card" aria-live="polite">
+          <span class="sync-label">Last sync</span>
+          <strong id="last-sync">Loading...</strong>
+          <span class="sync-note">Updated twice daily at 12am and 12pm SGT</span>
+        </div>
+      </section>
+
+      <section class="leaderboard-panel" aria-labelledby="leaderboard-title">
+        <div class="panel-heading">
+          <h2 id="leaderboard-title">Current Standings</h2>
+          <span id="entry-count">- participants</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Participant</th>
+                <th scope="col">Ballots</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <tr>
+                <td colspan="3" class="empty-state">Loading leaderboard...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

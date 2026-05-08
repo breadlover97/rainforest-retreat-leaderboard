@@ -1,0 +1,207 @@
+:root {
+  color-scheme: light;
+  --ink: #10231d;
+  --muted: #5b6f68;
+  --line: #d9e3de;
+  --paper: #fbf9f4;
+  --panel: #ffffff;
+  --forest: #1f6b4b;
+  --moss: #dcebd5;
+  --gold: #b9822d;
+  --gold-soft: #f5e5c5;
+  --shadow: 0 18px 45px rgba(30, 65, 52, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(220, 235, 213, 0.86), rgba(251, 249, 244, 0.92)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1800&q=80");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.page-shell {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: end;
+  min-height: 280px;
+  padding: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--forest);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  max-width: 720px;
+  font-size: clamp(2.8rem, 8vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.subcopy {
+  max-width: 640px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.sync-card {
+  display: grid;
+  gap: 8px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.sync-label,
+.sync-note,
+#entry-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#last-sync {
+  font-size: 1.08rem;
+}
+
+.leaderboard-panel {
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+h2 {
+  font-size: 1.2rem;
+  letter-spacing: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 18px 26px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+td {
+  border-top: 1px solid var(--line);
+  font-size: 1.02rem;
+}
+
+td:first-child {
+  width: 96px;
+  color: var(--forest);
+  font-weight: 800;
+}
+
+td:last-child,
+th:last-child {
+  text-align: right;
+}
+
+.rank-top td {
+  background: var(--gold-soft);
+}
+
+.rank-top td:first-child {
+  color: var(--gold);
+}
+
+.ballot-count {
+  display: inline-flex;
+  min-width: 44px;
+  justify-content: center;
+  padding: 7px 12px;
+  background: var(--moss);
+  color: var(--forest);
+  font-weight: 800;
+}
+
+.empty-state {
+  padding: 36px 26px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 20px, 1080px);
+    padding: 16px 0;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 26px;
+  }
+
+  .sync-card {
+    padding: 18px;
+  }
+
+  th,
+  td {
+    padding: 15px 16px;
+  }
+}
