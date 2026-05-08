@@ -78,6 +78,11 @@ h1 {
   text-wrap: balance;
 }
 
+.emoji {
+  display: inline-block;
+  margin-right: 0.35em;
+}
+
 .subcopy {
   max-width: 640px;
   margin-top: 18px;
