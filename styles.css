@@ -50,6 +50,10 @@ body {
   backdrop-filter: blur(12px);
 }
 
+.hero-copy {
+  min-width: 0;
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: var(--forest);
@@ -66,10 +70,12 @@ p {
 }
 
 h1 {
-  max-width: 720px;
-  font-size: clamp(2.8rem, 8vw, 5.8rem);
-  line-height: 0.95;
+  width: 100%;
+  max-width: none;
+  font-size: clamp(2.4rem, 5.7vw, 4.65rem);
+  line-height: 1;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .subcopy {
@@ -220,6 +226,10 @@ th:last-child {
     grid-template-columns: 1fr;
     min-height: auto;
     padding: 26px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 8.2vw, 3.25rem);
   }
 
   .campaign-details {
