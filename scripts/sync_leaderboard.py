@@ -10,7 +10,8 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "data" / "leaderboard.json"
-DEFAULT_SHEET_NAME = "Public Leaderboard Export"
+DEFAULT_SHEET_GID = "8052026"
+FORMULA_ERRORS = {"#REF!", "#N/A", "#VALUE!", "#ERROR!", "#DIV/0!", "#NAME?", "#NUM!"}
 
 
 def get_public_csv_values() -> list[list[str]]:
@@ -18,9 +19,9 @@ def get_public_csv_values() -> list[list[str]]:
     if not spreadsheet_id:
         raise RuntimeError("Missing GOOGLE_SHEETS_SPREADSHEET_ID secret.")
 
-    sheet_name = os.environ.get("GOOGLE_SHEETS_TAB", DEFAULT_SHEET_NAME).strip()
-    query = urlencode({"tqx": "out:csv", "sheet": sheet_name})
-    url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/gviz/tq?{query}"
+    sheet_gid = os.environ.get("GOOGLE_SHEETS_GID", DEFAULT_SHEET_GID).strip()
+    query = urlencode({"format": "csv", "gid": sheet_gid})
+    url = f"https://docs.google.com/spreadsheets/d/{spreadsheet_id}/export?{query}"
 
     with urlopen(url, timeout=30) as response:
         if response.status != 200:
@@ -43,6 +44,10 @@ def parse_int(value: str, field_name: str) -> int:
         raise RuntimeError(f"Invalid {field_name}: {value!r}") from exc
 
 
+def has_formula_error(values: list[str]) -> bool:
+    return any(value.upper() in FORMULA_ERRORS for value in values)
+
+
 def parse_entries(values: list[list[str]]) -> list[dict]:
     entries = []
     for row_number, row in enumerate(values[1:], start=2):
@@ -50,11 +55,11 @@ def parse_entries(values: list[list[str]]) -> list[dict]:
             continue
 
         rank, masked_name, total_ballots = [item.strip() for item in row[:3]]
+        if has_formula_error([rank, masked_name, total_ballots]):
+            continue
         if not rank and not masked_name and not total_ballots:
             continue
         if not rank or not masked_name or not total_ballots:
-            if masked_name == "#REF!":
-                continue
             raise RuntimeError(f"Incomplete leaderboard row at export row {row_number}.")
 
         entries.append(

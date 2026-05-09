@@ -32,7 +32,7 @@ Add this repository secret before enabling the workflow:
 The workflow reads only the public CSV export for this tab:
 
 ```text
-Public Leaderboard Export
+Public Leaderboard Export, gid 8052026
 ```
 
 No Google service-account key is required.

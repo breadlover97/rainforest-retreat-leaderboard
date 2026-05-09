@@ -23,7 +23,7 @@ jobs:
       - name: Generate leaderboard data
         env:
           GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
-          GOOGLE_SHEETS_TAB: "Public Leaderboard Export"
+          GOOGLE_SHEETS_GID: "8052026"
         run: python scripts/sync_leaderboard.py
 
       - name: Commit updated data
