@@ -29,9 +29,35 @@
           <p class="subcopy">1st May - 31st July 2026</p>
         </div>
         <div class="sync-card" aria-live="polite">
-          <span class="sync-label"><span class="emoji" aria-hidden="true">🔄</span> Last sync</span>
-          <strong id="last-sync">Loading...</strong>
+          <span class="sync-label">
+            <span class="emoji" aria-hidden="true">🔄</span> Last synced on
+            <strong id="last-sync">Loading...</strong>
+          </span>
           <span class="sync-note">Updated twice daily at 12am and 12pm SGT</span>
+        </div>
+      </section>
+
+      <section class="leaderboard-panel" aria-labelledby="leaderboard-title">
+        <div class="panel-heading">
+          <h2 id="leaderboard-title"><span class="emoji" aria-hidden="true">🏆</span> Current Standings</h2>
+          <span id="entry-count">- participants</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Participant</th>
+                <th scope="col">Ballots</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <tr>
+                <td colspan="3" class="empty-state">Loading leaderboard...</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -92,30 +118,6 @@
               Only completed Financial Clarity Sessions count as successful referrals.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section class="leaderboard-panel" aria-labelledby="leaderboard-title">
-        <div class="panel-heading">
-          <h2 id="leaderboard-title"><span class="emoji" aria-hidden="true">🏆</span> Current Standings</h2>
-          <span id="entry-count">- participants</span>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Participant</th>
-                <th scope="col">Ballots</th>
-              </tr>
-            </thead>
-            <tbody id="leaderboard-body">
-              <tr>
-                <td colspan="3" class="empty-state">Loading leaderboard...</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </section>
 
