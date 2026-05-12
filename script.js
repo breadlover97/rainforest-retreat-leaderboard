@@ -1,6 +1,8 @@
 const body = document.querySelector("#leaderboard-body");
 const lastSync = document.querySelector("#last-sync");
 const entryCount = document.querySelector("#entry-count");
+const faqToggle = document.querySelector(".faq-toggle");
+const faqItems = [...document.querySelectorAll(".faq-list details")];
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const formatSyncTime = (isoString) => {
@@ -96,14 +98,31 @@ const animateDetails = (details, shouldOpen) => {
     details.open = shouldOpen;
     details.style.height = "";
     details.style.overflow = "";
+    updateFaqToggle();
   };
   animation.oncancel = animation.onfinish;
 };
 
-document.querySelectorAll(".faq-list details").forEach((details) => {
+const updateFaqToggle = () => {
+  if (!faqToggle || !faqItems.length) return;
+
+  const allOpen = faqItems.every((details) => details.open);
+  faqToggle.textContent = allOpen ? "Close all" : "Expand all";
+  faqToggle.setAttribute("aria-expanded", String(allOpen));
+};
+
+faqItems.forEach((details) => {
   const summary = details.querySelector("summary");
   summary?.addEventListener("click", (event) => {
     event.preventDefault();
     animateDetails(details, !details.open);
   });
 });
+
+faqToggle?.addEventListener("click", () => {
+  const shouldOpen = faqItems.some((details) => !details.open);
+  faqItems.forEach((details) => animateDetails(details, shouldOpen));
+  if (motionQuery.matches) updateFaqToggle();
+});
+
+updateFaqToggle();
