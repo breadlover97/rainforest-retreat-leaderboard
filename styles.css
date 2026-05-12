@@ -440,8 +440,46 @@ details[open] summary::after {
   line-height: 1.55;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 10;
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: var(--forest);
+  box-shadow: var(--shadow);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: #174f39;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  summary::after {
+  summary::after,
+  .back-to-top {
     transition: none;
   }
 }
@@ -515,5 +553,12 @@ details[open] summary::after {
 
   .faq-answer p {
     padding: 0 16px 18px;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
   }
 }

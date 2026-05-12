@@ -3,6 +3,7 @@ const lastSync = document.querySelector("#last-sync");
 const entryCount = document.querySelector("#entry-count");
 const faqToggle = document.querySelector(".faq-toggle");
 const faqItems = [...document.querySelectorAll(".faq-list details")];
+const backToTop = document.querySelector(".back-to-top");
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const formatSyncTime = (isoString) => {
@@ -126,3 +127,17 @@ faqToggle?.addEventListener("click", () => {
 });
 
 updateFaqToggle();
+
+const updateBackToTop = () => {
+  backToTop?.classList.toggle("is-visible", window.scrollY > 420);
+};
+
+backToTop?.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: motionQuery.matches ? "auto" : "smooth",
+  });
+});
+
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+updateBackToTop();
