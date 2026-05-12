@@ -32,6 +32,15 @@ const getLeaderboardPageSize = () => {
   return Number(leaderboardPageSize?.value || 10);
 };
 
+const scrollLeaderboardToList = () => {
+  if (!mobileLeaderboardQuery.matches) return;
+
+  document.querySelector(".table-wrap")?.scrollIntoView({
+    behavior: motionQuery.matches ? "auto" : "smooth",
+    block: "start",
+  });
+};
+
 const renderTableRows = (entries) => {
   body.replaceChildren();
 
@@ -125,16 +134,19 @@ fetch("data/leaderboard.json", { cache: "no-store" })
 leaderboardPageSize?.addEventListener("change", () => {
   leaderboardCurrentPage = 1;
   renderRows(leaderboardEntries);
+  scrollLeaderboardToList();
 });
 
 leaderboardPrev?.addEventListener("click", () => {
   leaderboardCurrentPage -= 1;
   renderRows(leaderboardEntries);
+  scrollLeaderboardToList();
 });
 
 leaderboardNext?.addEventListener("click", () => {
   leaderboardCurrentPage += 1;
   renderRows(leaderboardEntries);
+  scrollLeaderboardToList();
 });
 
 const handleLeaderboardViewportChange = () => {
