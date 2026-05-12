@@ -32,7 +32,7 @@ body {
 }
 
 .page-shell {
-  width: calc(100% - 32px);
+  width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -74,7 +74,7 @@ h1 {
   grid-column: 1 / -1;
   width: 100%;
   max-width: none;
-  font-size: clamp(2.35rem, 6.1vw, 7rem);
+  font-size: clamp(2.35rem, 5vw, 4.35rem);
   line-height: 1;
   letter-spacing: 0;
   text-wrap: nowrap;
