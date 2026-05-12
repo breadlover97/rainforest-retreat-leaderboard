@@ -59,6 +59,21 @@
             </tbody>
           </table>
         </div>
+        <div class="leaderboard-pagination" id="leaderboard-pagination" hidden>
+          <label class="page-size-control" for="leaderboard-page-size">
+            <span>Show</span>
+            <select id="leaderboard-page-size">
+              <option value="10">10 per page</option>
+              <option value="25">25 per page</option>
+              <option value="all">All</option>
+            </select>
+          </label>
+          <div class="pagination-controls" aria-label="Leaderboard pagination">
+            <button id="leaderboard-prev" type="button">Previous</button>
+            <span id="leaderboard-page-status" aria-live="polite">Page 1 of 1</span>
+            <button id="leaderboard-next" type="button">Next</button>
+          </div>
+        </div>
         <p class="scroll-hint" id="leaderboard-scroll-hint" hidden>Scroll to view all participants</p>
       </section>
 

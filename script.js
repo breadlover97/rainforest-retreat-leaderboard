@@ -3,10 +3,19 @@ const lastSync = document.querySelector("#last-sync");
 const entryCount = document.querySelector("#entry-count");
 const leaderboardPanel = document.querySelector(".leaderboard-panel");
 const leaderboardScrollHint = document.querySelector("#leaderboard-scroll-hint");
+const leaderboardPagination = document.querySelector("#leaderboard-pagination");
+const leaderboardPageSize = document.querySelector("#leaderboard-page-size");
+const leaderboardPrev = document.querySelector("#leaderboard-prev");
+const leaderboardNext = document.querySelector("#leaderboard-next");
+const leaderboardPageStatus = document.querySelector("#leaderboard-page-status");
 const faqToggle = document.querySelector(".faq-toggle");
 const faqItems = [...document.querySelectorAll(".faq-list details")];
 const backToTop = document.querySelector(".back-to-top");
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const mobileLeaderboardQuery = window.matchMedia("(max-width: 760px)");
+
+let leaderboardEntries = [];
+let leaderboardCurrentPage = 1;
 
 const formatSyncTime = (isoString) => {
   if (!isoString) return "Not synced yet";
@@ -18,11 +27,13 @@ const formatSyncTime = (isoString) => {
   }).format(new Date(isoString));
 };
 
-const renderRows = (entries) => {
+const getLeaderboardPageSize = () => {
+  if (leaderboardPageSize?.value === "all") return leaderboardEntries.length || 1;
+  return Number(leaderboardPageSize?.value || 10);
+};
+
+const renderTableRows = (entries) => {
   body.replaceChildren();
-  const hasOverflowRows = entries.length > 10;
-  leaderboardPanel?.classList.toggle("has-scroll", hasOverflowRows);
-  if (leaderboardScrollHint) leaderboardScrollHint.hidden = !hasOverflowRows;
 
   if (!entries.length) {
     const row = document.createElement("tr");
@@ -56,6 +67,37 @@ const renderRows = (entries) => {
   }
 };
 
+const renderRows = (entries) => {
+  leaderboardEntries = entries;
+
+  const isMobile = mobileLeaderboardQuery.matches;
+  const shouldPaginate = isMobile && entries.length > 10;
+  const pageSize = getLeaderboardPageSize();
+  const totalPages = shouldPaginate ? Math.ceil(entries.length / pageSize) : 1;
+
+  leaderboardCurrentPage = Math.min(Math.max(leaderboardCurrentPage, 1), totalPages);
+
+  const startIndex = shouldPaginate ? (leaderboardCurrentPage - 1) * pageSize : 0;
+  const endIndex = shouldPaginate ? Math.min(startIndex + pageSize, entries.length) : entries.length;
+  const visibleEntries = shouldPaginate ? entries.slice(startIndex, endIndex) : entries;
+  const hasDesktopOverflow = !isMobile && entries.length > 10;
+
+  leaderboardPanel?.classList.toggle("has-scroll", hasDesktopOverflow);
+  if (leaderboardScrollHint) leaderboardScrollHint.hidden = !hasDesktopOverflow;
+  if (leaderboardPagination) leaderboardPagination.hidden = !shouldPaginate;
+
+  if (leaderboardPrev) leaderboardPrev.disabled = leaderboardCurrentPage <= 1;
+  if (leaderboardNext) leaderboardNext.disabled = leaderboardCurrentPage >= totalPages;
+  if (leaderboardPageStatus) {
+    leaderboardPageStatus.textContent =
+      shouldPaginate && leaderboardPageSize?.value === "all"
+        ? `All ${entries.length}`
+        : `Page ${leaderboardCurrentPage} of ${totalPages}`;
+  }
+
+  renderTableRows(visibleEntries);
+};
+
 fetch("data/leaderboard.json", { cache: "no-store" })
   .then((response) => {
     if (!response.ok) throw new Error("Unable to load leaderboard data");
@@ -79,6 +121,32 @@ fetch("data/leaderboard.json", { cache: "no-store" })
     row.append(cell);
     body.append(row);
   });
+
+leaderboardPageSize?.addEventListener("change", () => {
+  leaderboardCurrentPage = 1;
+  renderRows(leaderboardEntries);
+});
+
+leaderboardPrev?.addEventListener("click", () => {
+  leaderboardCurrentPage -= 1;
+  renderRows(leaderboardEntries);
+});
+
+leaderboardNext?.addEventListener("click", () => {
+  leaderboardCurrentPage += 1;
+  renderRows(leaderboardEntries);
+});
+
+const handleLeaderboardViewportChange = () => {
+  leaderboardCurrentPage = 1;
+  renderRows(leaderboardEntries);
+};
+
+if (mobileLeaderboardQuery.addEventListener) {
+  mobileLeaderboardQuery.addEventListener("change", handleLeaderboardViewportChange);
+} else {
+  mobileLeaderboardQuery.addListener(handleLeaderboardViewportChange);
+}
 
 const animateDetails = (details, shouldOpen) => {
   const summary = details.querySelector("summary");
