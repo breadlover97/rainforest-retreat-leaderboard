@@ -51,6 +51,7 @@ body {
 }
 
 .hero-copy {
+  display: contents;
   min-width: 0;
 }
 
@@ -70,12 +71,14 @@ p {
 }
 
 h1 {
+  grid-column: 1 / -1;
   width: 100%;
   max-width: none;
-  font-size: clamp(2.4rem, 5.7vw, 4.65rem);
+  font-size: clamp(2.35rem, 5vw, 4rem);
   line-height: 1;
   letter-spacing: 0;
-  text-wrap: balance;
+  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .emoji {
@@ -84,6 +87,7 @@ h1 {
 }
 
 .subcopy {
+  grid-column: 1;
   max-width: 640px;
   margin-top: 18px;
   color: var(--muted);
@@ -92,6 +96,7 @@ h1 {
 }
 
 .sync-card {
+  grid-column: 2;
   display: grid;
   gap: 8px;
   padding: 22px;
@@ -185,34 +190,28 @@ h1 {
 
 .referral-tiers {
   display: grid;
-  grid-column: 1 / -1;
-  gap: 16px;
-  padding-top: 22px;
+  gap: 12px;
+  padding-top: 2px;
   border-top: 1px solid var(--line);
 }
 
 .tier-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
 .tier-grid div {
   display: grid;
   gap: 6px;
-  min-height: 84px;
+  min-height: 74px;
   padding: 14px;
   border: 1px solid var(--line);
   background: rgba(220, 235, 213, 0.42);
 }
 
-.campaign-details .closing-line {
-  grid-column: 1 / -1;
-  margin-top: 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-  color: var(--forest);
-  font-weight: 700;
+.chance-tier-panel {
+  gap: 18px;
 }
 
 .panel-heading {
@@ -226,6 +225,13 @@ h1 {
 
 h2 {
   font-size: 1.2rem;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
   letter-spacing: 0;
 }
 
@@ -365,11 +371,22 @@ details[open] summary::after {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding: 26px;
+    padding: 22px;
+  }
+
+  .hero-copy {
+    display: grid;
   }
 
   h1 {
-    font-size: clamp(1.8rem, 8.2vw, 3.25rem);
+    font-size: clamp(0.95rem, 5vw, 3.25rem);
+    text-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .subcopy,
+  .sync-card {
+    grid-column: 1;
   }
 
   .campaign-details {
