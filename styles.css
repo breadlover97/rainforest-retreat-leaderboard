@@ -129,10 +129,81 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.detail-panel {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
 .campaign-details p {
-  margin-top: 10px;
   color: var(--muted);
   line-height: 1.55;
+}
+
+.prize-list,
+.chance-list {
+  display: grid;
+  gap: 12px;
+}
+
+.prize-item {
+  display: grid;
+  gap: 5px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  background: rgba(251, 249, 244, 0.72);
+}
+
+.prize-item span,
+.tier-grid span {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.prize-item strong,
+.tier-grid strong,
+.chance-list strong {
+  color: var(--ink);
+}
+
+.prize-item small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.primary-prize {
+  border-color: rgba(185, 130, 45, 0.42);
+  background: var(--gold-soft);
+}
+
+.chance-list p {
+  padding-left: 14px;
+  border-left: 3px solid var(--forest);
+}
+
+.referral-tiers {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tier-grid div {
+  display: grid;
+  gap: 6px;
+  min-height: 84px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: rgba(220, 235, 213, 0.42);
 }
 
 .campaign-details .closing-line {
@@ -257,17 +328,32 @@ summary::after {
   background: var(--moss);
   color: var(--forest);
   font-weight: 800;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
 }
 
 details[open] summary::after {
   content: "-";
+  transform: rotate(180deg);
+  background: var(--gold-soft);
 }
 
-details p {
+.faq-answer {
+  overflow: hidden;
+}
+
+.faq-answer p {
   max-width: 760px;
   padding: 0 26px 20px;
   color: var(--muted);
   line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  summary::after {
+    transition: none;
+  }
 }
 
 @media (max-width: 760px) {
@@ -291,6 +377,10 @@ details p {
     padding: 22px;
   }
 
+  .tier-grid {
+    grid-template-columns: 1fr;
+  }
+
   .sync-card {
     padding: 18px;
   }
@@ -306,7 +396,7 @@ details p {
     padding: 16px;
   }
 
-  details p {
+  .faq-answer p {
     padding: 0 16px 18px;
   }
 }

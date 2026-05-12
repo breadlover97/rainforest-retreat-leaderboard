@@ -1,6 +1,7 @@
 const body = document.querySelector("#leaderboard-body");
 const lastSync = document.querySelector("#last-sync");
 const entryCount = document.querySelector("#entry-count");
+const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const formatSyncTime = (isoString) => {
   if (!isoString) return "Not synced yet";
@@ -70,3 +71,39 @@ fetch("data/leaderboard.json", { cache: "no-store" })
     row.append(cell);
     body.append(row);
   });
+
+const animateDetails = (details, shouldOpen) => {
+  const summary = details.querySelector("summary");
+  if (!summary || motionQuery.matches) {
+    details.open = shouldOpen;
+    return;
+  }
+
+  details.style.overflow = "hidden";
+  const startHeight = `${details.offsetHeight}px`;
+
+  if (shouldOpen) {
+    details.open = true;
+  }
+
+  const endHeight = shouldOpen ? `${details.scrollHeight}px` : `${summary.offsetHeight}px`;
+  const animation = details.animate(
+    { height: [startHeight, endHeight] },
+    { duration: 220, easing: "ease-out" },
+  );
+
+  animation.onfinish = () => {
+    details.open = shouldOpen;
+    details.style.height = "";
+    details.style.overflow = "";
+  };
+  animation.oncancel = animation.onfinish;
+};
+
+document.querySelectorAll(".faq-list details").forEach((details) => {
+  const summary = details.querySelector("summary");
+  summary?.addEventListener("click", (event) => {
+    event.preventDefault();
+    animateDetails(details, !details.open);
+  });
+});
