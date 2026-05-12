@@ -148,20 +148,19 @@ h1 {
 
 .campaign-details {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 16px;
-  align-items: start;
-  margin-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
 }
 
 .detail-panel {
   display: grid;
   align-content: start;
-  gap: 12px;
-  padding: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow);
+  gap: 16px;
 }
 
 .campaign-details p {
@@ -172,49 +171,28 @@ h1 {
 .prize-list,
 .chance-list {
   display: grid;
-  gap: 10px;
-}
-
-.prize-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .prize-item {
   display: grid;
-  gap: 4px;
-  min-height: 112px;
-  padding: 13px;
+  gap: 5px;
+  padding: 15px;
   border: 1px solid var(--line);
   background: rgba(251, 249, 244, 0.72);
 }
 
 .prize-item span,
-.tier-grid span {
+.chance-card span {
   color: var(--gold);
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.tier-grid span {
-  font-size: 0.68rem;
-  white-space: nowrap;
-}
-
 .prize-item strong,
-.tier-grid strong,
 .chance-list strong {
   color: var(--ink);
-}
-
-.prize-item strong,
-.tier-grid strong {
-  line-height: 1.2;
-}
-
-.tier-grid strong {
-  font-size: 0.92rem;
-  white-space: nowrap;
 }
 
 .prize-item small {
@@ -227,41 +205,70 @@ h1 {
   background: var(--gold-soft);
 }
 
-.chance-list p {
-  padding-left: 12px;
-  border-left: 3px solid var(--forest);
-}
-
-.chance-tier-panel .chance-list {
+.chance-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
 }
 
-.chance-tier-panel .chance-list p {
-  font-size: 0.95rem;
+.chance-card {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 116px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--forest);
+  background:
+    linear-gradient(180deg, rgba(220, 235, 213, 0.36), rgba(255, 255, 255, 0.72)),
+    var(--panel);
+}
+
+.chance-card p {
+  color: var(--muted);
+  font-size: 0.96rem;
   line-height: 1.45;
 }
 
 .referral-tiers {
   display: grid;
-  gap: 10px;
-  padding-top: 12px;
+  gap: 12px;
+  padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 
-.tier-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
+.tier-table {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.78);
 }
 
-.tier-grid div {
-  display: grid;
-  gap: 4px;
-  min-height: 0;
-  padding: 9px;
-  border: 1px solid var(--line);
-  background: rgba(220, 235, 213, 0.42);
+.tier-table th,
+.tier-table td {
+  padding: 10px 12px;
+  white-space: normal;
+}
+
+.tier-table th {
+  background: var(--moss);
+  color: var(--forest);
+  font-size: 0.74rem;
+}
+
+.tier-table td {
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.tier-table td:first-child {
+  width: 44%;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.tier-table td:last-child,
+.tier-table th:last-child {
+  text-align: left;
 }
 
 .chance-tier-panel {
@@ -465,16 +472,15 @@ details[open] summary::after {
 
   .campaign-details {
     grid-template-columns: 1fr;
-    gap: 14px;
+    padding: 22px;
   }
 
-  .prize-list,
-  .chance-tier-panel .chance-list {
+  .chance-list {
     grid-template-columns: 1fr;
   }
 
-  .tier-grid {
-    grid-template-columns: 1fr;
+  .chance-card {
+    min-height: 0;
   }
 
   .sync-card {
