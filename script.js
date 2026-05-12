@@ -1,6 +1,8 @@
 const body = document.querySelector("#leaderboard-body");
 const lastSync = document.querySelector("#last-sync");
 const entryCount = document.querySelector("#entry-count");
+const leaderboardPanel = document.querySelector(".leaderboard-panel");
+const leaderboardScrollHint = document.querySelector("#leaderboard-scroll-hint");
 const faqToggle = document.querySelector(".faq-toggle");
 const faqItems = [...document.querySelectorAll(".faq-list details")];
 const backToTop = document.querySelector(".back-to-top");
@@ -18,6 +20,9 @@ const formatSyncTime = (isoString) => {
 
 const renderRows = (entries) => {
   body.replaceChildren();
+  const hasOverflowRows = entries.length > 10;
+  leaderboardPanel?.classList.toggle("has-scroll", hasOverflowRows);
+  if (leaderboardScrollHint) leaderboardScrollHint.hidden = !hasOverflowRows;
 
   if (!entries.length) {
     const row = document.createElement("tr");

@@ -319,12 +319,25 @@ h3 {
 }
 
 .table-wrap {
-  overflow-x: auto;
+  max-height: 752px;
+  overflow: auto;
+  scrollbar-color: var(--forest) var(--moss);
+}
+
+.leaderboard-panel.has-scroll .table-wrap {
+  border-bottom: 1px solid var(--line);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--panel);
 }
 
 th,
@@ -379,6 +392,15 @@ th:last-child {
 .empty-state {
   padding: 36px 26px;
   color: var(--muted);
+  text-align: center;
+}
+
+.scroll-hint {
+  padding: 10px 26px;
+  background: rgba(251, 249, 244, 0.96);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -534,6 +556,10 @@ details[open] summary::after {
   th,
   td {
     padding: 15px 16px;
+  }
+
+  .table-wrap {
+    max-height: 672px;
   }
 
   summary {
