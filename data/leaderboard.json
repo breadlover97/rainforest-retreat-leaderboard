@@ -1,4 +1,20 @@
 {
-  "generatedAt": "2026-05-12T14:39:16+08:00",
-  "entries": []
+  "generatedAt": "2026-05-12T15:36:19+08:00",
+  "entries": [
+    {
+      "rank": 1,
+      "maskedName": "Eric W.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 2,
+      "maskedName": "Guo Z.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 3,
+      "maskedName": "Jeon J.",
+      "totalBallots": 1
+    }
+  ]
 }
