@@ -1,19 +1,44 @@
 {
-  "generatedAt": "2026-05-12T15:36:19+08:00",
+  "generatedAt": "2026-05-12T15:54:36+08:00",
   "entries": [
     {
       "rank": 1,
-      "maskedName": "Eric W.",
+      "maskedName": "Adelaide Y.",
       "totalBallots": 1
     },
     {
       "rank": 2,
-      "maskedName": "Guo Z.",
+      "maskedName": "Divien V.",
       "totalBallots": 1
     },
     {
       "rank": 3,
+      "maskedName": "Eric W.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 4,
+      "maskedName": "Guo Z.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 5,
       "maskedName": "Jeon J.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 6,
+      "maskedName": "Malvin R.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 7,
+      "maskedName": "Muhammad S.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 8,
+      "maskedName": "Rey T.",
       "totalBallots": 1
     }
   ]
