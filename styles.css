@@ -110,7 +110,8 @@ h1 {
   font-size: 1.08rem;
 }
 
-.leaderboard-panel {
+.leaderboard-panel,
+.faq-section {
   margin-top: 24px;
   border: 1px solid var(--line);
   background: var(--panel);
@@ -221,6 +222,54 @@ th:last-child {
   text-align: center;
 }
 
+.faq-list {
+  display: grid;
+}
+
+details {
+  border-top: 1px solid var(--line);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 62px;
+  padding: 18px 26px;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  place-items: center;
+  background: var(--moss);
+  color: var(--forest);
+  font-weight: 800;
+}
+
+details[open] summary::after {
+  content: "-";
+}
+
+details p {
+  max-width: 760px;
+  padding: 0 26px 20px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 @media (max-width: 760px) {
   .page-shell {
     width: min(100% - 20px, 1080px);
@@ -249,5 +298,15 @@ th:last-child {
   th,
   td {
     padding: 15px 16px;
+  }
+
+  summary {
+    align-items: flex-start;
+    min-height: 56px;
+    padding: 16px;
+  }
+
+  details p {
+    padding: 0 16px 18px;
   }
 }
