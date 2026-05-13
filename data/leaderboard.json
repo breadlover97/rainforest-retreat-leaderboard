@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T14:50:42+08:00",
+  "generatedAt": "2026-05-14T02:04:05+08:00",
   "entries": [
     {
       "rank": 1,
@@ -18,12 +18,12 @@
     },
     {
       "rank": 4,
-      "maskedName": "Eric W.",
+      "maskedName": "Elliot K.",
       "totalBallots": 1
     },
     {
       "rank": 5,
-      "maskedName": "Gina L.",
+      "maskedName": "Eric W.",
       "totalBallots": 1
     },
     {
@@ -33,211 +33,241 @@
     },
     {
       "rank": 7,
-      "maskedName": "Guo Z.",
+      "maskedName": "Gina L.",
       "totalBallots": 1
     },
     {
       "rank": 8,
-      "maskedName": "Hannah L.",
+      "maskedName": "Guo Z.",
       "totalBallots": 1
     },
     {
       "rank": 9,
-      "maskedName": "Ho S.",
+      "maskedName": "Hannah L.",
       "totalBallots": 1
     },
     {
       "rank": 10,
-      "maskedName": "Jeon J.",
+      "maskedName": "Ho S.",
       "totalBallots": 1
     },
     {
       "rank": 11,
-      "maskedName": "Malvin R.",
+      "maskedName": "Jeon J.",
       "totalBallots": 1
     },
     {
       "rank": 12,
-      "maskedName": "Muhammad S.",
+      "maskedName": "Malvin R.",
       "totalBallots": 1
     },
     {
       "rank": 13,
-      "maskedName": "Rey T.",
+      "maskedName": "Maurice L.",
       "totalBallots": 1
     },
     {
       "rank": 14,
-      "maskedName": "Tan M.",
+      "maskedName": "Muhammad S.",
       "totalBallots": 1
     },
     {
       "rank": 15,
+      "maskedName": "Rey T.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 16,
+      "maskedName": "Tan M.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 17,
+      "maskedName": "Teh J.",
+      "totalBallots": 1
+    },
+    {
+      "rank": 18,
       "maskedName": "Ang J.",
       "totalBallots": 0
     },
     {
-      "rank": 16,
+      "rank": 19,
       "maskedName": "Celine A.",
       "totalBallots": 0
     },
     {
-      "rank": 17,
+      "rank": 20,
       "maskedName": "Chia Y.",
       "totalBallots": 0
     },
     {
-      "rank": 18,
+      "rank": 21,
       "maskedName": "Denise N.",
       "totalBallots": 0
     },
     {
-      "rank": 19,
-      "maskedName": "Fidel T.",
-      "totalBallots": 0
-    },
-    {
-      "rank": 20,
-      "maskedName": "Gerald A.",
-      "totalBallots": 0
-    },
-    {
-      "rank": 21,
-      "maskedName": "Goh J.",
-      "totalBallots": 0
-    },
-    {
       "rank": 22,
-      "maskedName": "Heng Z.",
+      "maskedName": "Ell***",
       "totalBallots": 0
     },
     {
       "rank": 23,
-      "maskedName": "How K.",
+      "maskedName": "Fidel T.",
       "totalBallots": 0
     },
     {
       "rank": 24,
-      "maskedName": "Hui Y.",
+      "maskedName": "Gerald A.",
       "totalBallots": 0
     },
     {
       "rank": 25,
-      "maskedName": "Irene G.",
+      "maskedName": "Goh J.",
       "totalBallots": 0
     },
     {
       "rank": 26,
-      "maskedName": "Jalvin C.",
+      "maskedName": "Heng Z.",
       "totalBallots": 0
     },
     {
       "rank": 27,
-      "maskedName": "Jarryl C.",
+      "maskedName": "How K.",
       "totalBallots": 0
     },
     {
       "rank": 28,
-      "maskedName": "Jewel S.",
+      "maskedName": "Hui Y.",
       "totalBallots": 0
     },
     {
       "rank": 29,
-      "maskedName": "Joshua H.",
+      "maskedName": "Irene G.",
       "totalBallots": 0
     },
     {
       "rank": 30,
-      "maskedName": "Justin T.",
+      "maskedName": "Jalvin C.",
       "totalBallots": 0
     },
     {
       "rank": 31,
-      "maskedName": "Kai Y.",
+      "maskedName": "Jarryl C.",
       "totalBallots": 0
     },
     {
       "rank": 32,
-      "maskedName": "Koay J.",
+      "maskedName": "Jewel S.",
       "totalBallots": 0
     },
     {
       "rank": 33,
-      "maskedName": "Kong O.",
+      "maskedName": "Joshua H.",
       "totalBallots": 0
     },
     {
       "rank": 34,
-      "maskedName": "Lim C.",
+      "maskedName": "Justin T.",
       "totalBallots": 0
     },
     {
       "rank": 35,
-      "maskedName": "Matilda L.",
+      "maskedName": "Kai L.",
       "totalBallots": 0
     },
     {
       "rank": 36,
-      "maskedName": "Nadon P.",
+      "maskedName": "Kai Y.",
       "totalBallots": 0
     },
     {
       "rank": 37,
-      "maskedName": "Nicholas S.",
+      "maskedName": "Koay J.",
       "totalBallots": 0
     },
     {
       "rank": 38,
-      "maskedName": "Nicole G.",
+      "maskedName": "Kong O.",
       "totalBallots": 0
     },
     {
       "rank": 39,
-      "maskedName": "Pow L.",
+      "maskedName": "Lim C.",
       "totalBallots": 0
     },
     {
       "rank": 40,
-      "maskedName": "Romero D.",
+      "maskedName": "Matilda L.",
       "totalBallots": 0
     },
     {
       "rank": 41,
-      "maskedName": "Rox***",
+      "maskedName": "Nadon P.",
       "totalBallots": 0
     },
     {
       "rank": 42,
-      "maskedName": "Ryan L.",
+      "maskedName": "Nicholas S.",
       "totalBallots": 0
     },
     {
       "rank": 43,
-      "maskedName": "Seah J.",
+      "maskedName": "Nicole G.",
       "totalBallots": 0
     },
     {
       "rank": 44,
-      "maskedName": "Shreya B.",
+      "maskedName": "Pow L.",
       "totalBallots": 0
     },
     {
       "rank": 45,
-      "maskedName": "Tan J.",
+      "maskedName": "Romero D.",
       "totalBallots": 0
     },
     {
       "rank": 46,
-      "maskedName": "Teo T.",
+      "maskedName": "Rox***",
       "totalBallots": 0
     },
     {
       "rank": 47,
-      "maskedName": "Therese G.",
+      "maskedName": "Ryan L.",
       "totalBallots": 0
     },
     {
       "rank": 48,
+      "maskedName": "Seah J.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 49,
+      "maskedName": "Shreya B.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 50,
+      "maskedName": "Suwanna O.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 51,
+      "maskedName": "Tan J.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 52,
+      "maskedName": "Teo T.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 53,
+      "maskedName": "Therese G.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 54,
       "maskedName": "Zihe G.",
       "totalBallots": 0
     }
