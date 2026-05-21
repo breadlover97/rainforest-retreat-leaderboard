@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T15:57:09+08:00",
+  "generatedAt": "2026-05-22T02:05:25+08:00",
   "entries": [
     {
       "rank": 1,
@@ -353,27 +353,27 @@
     },
     {
       "rank": 71,
-      "maskedName": "Tan E.",
+      "maskedName": "Tan B.",
       "totalBallots": 0
     },
     {
       "rank": 72,
-      "maskedName": "Teo T.",
+      "maskedName": "Tan E.",
       "totalBallots": 0
     },
     {
       "rank": 73,
-      "maskedName": "Therese G.",
+      "maskedName": "Teo T.",
       "totalBallots": 0
     },
     {
       "rank": 74,
-      "maskedName": "Yapa P.",
+      "maskedName": "Therese G.",
       "totalBallots": 0
     },
     {
       "rank": 75,
-      "maskedName": "Yeo L.",
+      "maskedName": "Yapa P.",
       "totalBallots": 0
     },
     {
@@ -383,16 +383,21 @@
     },
     {
       "rank": 77,
-      "maskedName": "Yeo W.",
+      "maskedName": "Yeo L.",
       "totalBallots": 0
     },
     {
       "rank": 78,
-      "maskedName": "Yeoh M.",
+      "maskedName": "Yeo W.",
       "totalBallots": 0
     },
     {
       "rank": 79,
+      "maskedName": "Yeoh M.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 80,
       "maskedName": "Zihe G.",
       "totalBallots": 0
     }
