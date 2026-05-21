@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T02:20:54+08:00",
+  "generatedAt": "2026-05-21T15:57:09+08:00",
   "entries": [
     {
       "rank": 1,
@@ -338,37 +338,37 @@
     },
     {
       "rank": 68,
-      "maskedName": "Suwanna O.",
+      "maskedName": "Sng E.",
       "totalBallots": 0
     },
     {
       "rank": 69,
-      "maskedName": "Syed M.",
+      "maskedName": "Suwanna O.",
       "totalBallots": 0
     },
     {
       "rank": 70,
-      "maskedName": "Tan E.",
+      "maskedName": "Syed M.",
       "totalBallots": 0
     },
     {
       "rank": 71,
-      "maskedName": "Teo T.",
+      "maskedName": "Tan E.",
       "totalBallots": 0
     },
     {
       "rank": 72,
-      "maskedName": "Therese G.",
+      "maskedName": "Teo T.",
       "totalBallots": 0
     },
     {
       "rank": 73,
-      "maskedName": "Yapa P.",
+      "maskedName": "Therese G.",
       "totalBallots": 0
     },
     {
       "rank": 74,
-      "maskedName": "Yeo L.",
+      "maskedName": "Yapa P.",
       "totalBallots": 0
     },
     {
@@ -378,16 +378,21 @@
     },
     {
       "rank": 76,
-      "maskedName": "Yeo W.",
+      "maskedName": "Yeo L.",
       "totalBallots": 0
     },
     {
       "rank": 77,
-      "maskedName": "Yeoh M.",
+      "maskedName": "Yeo W.",
       "totalBallots": 0
     },
     {
       "rank": 78,
+      "maskedName": "Yeoh M.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 79,
       "maskedName": "Zihe G.",
       "totalBallots": 0
     }
