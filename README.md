@@ -23,6 +23,12 @@ cron: "0 4,16 * * *"
 
 GitHub schedules may run a few minutes late. The site displays the timestamp from `data/leaderboard.json`.
 
+The workflow can also be triggered by a Google Sheets form-submit hook using GitHub's `repository_dispatch` event. See:
+
+```text
+docs/sheet-sync-hook.md
+```
+
 ## Required Secret
 
 Add this repository secret before enabling the workflow:

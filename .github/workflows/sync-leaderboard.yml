@@ -1,6 +1,8 @@
 name: Sync leaderboard
 
 on:
+  repository_dispatch:
+    types: [sheet-sync]
   workflow_dispatch:
   schedule:
     - cron: "0 4,16 * * *"
