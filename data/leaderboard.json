@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T17:30:51+08:00",
+  "generatedAt": "2026-06-28T17:32:41+08:00",
   "entries": [
     {
       "rank": 1,
@@ -463,7 +463,7 @@
     },
     {
       "rank": 93,
-      "maskedName": "Tan Y.",
+      "maskedName": "Tan J.",
       "totalBallots": 0
     },
     {
@@ -473,51 +473,61 @@
     },
     {
       "rank": 95,
-      "maskedName": "Tay P.",
+      "maskedName": "Tan Y.",
       "totalBallots": 0
     },
     {
       "rank": 96,
-      "maskedName": "Teo T.",
+      "maskedName": "Tay P.",
       "totalBallots": 0
     },
     {
       "rank": 97,
-      "maskedName": "Therese G.",
+      "maskedName": "Teo T.",
       "totalBallots": 0
     },
     {
       "rank": 98,
-      "maskedName": "Tok***",
+      "maskedName": "Therese G.",
       "totalBallots": 0
     },
     {
       "rank": 99,
-      "maskedName": "Yapa P.",
+      "maskedName": "Tok***",
       "totalBallots": 0
     },
     {
       "rank": 100,
-      "maskedName": "Yeo L.",
+      "maskedName": "Wei X.",
       "totalBallots": 0
     },
     {
       "rank": 101,
-      "maskedName": "Yeo L.",
+      "maskedName": "Yapa P.",
       "totalBallots": 0
     },
     {
       "rank": 102,
-      "maskedName": "Yeo W.",
+      "maskedName": "Yeo L.",
       "totalBallots": 0
     },
     {
       "rank": 103,
-      "maskedName": "Yeoh M.",
+      "maskedName": "Yeo L.",
       "totalBallots": 0
     },
     {
       "rank": 104,
+      "maskedName": "Yeo W.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 105,
+      "maskedName": "Yeoh M.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 106,
       "maskedName": "Zihe G.",
       "totalBallots": 0
     }
