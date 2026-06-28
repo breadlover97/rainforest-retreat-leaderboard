@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T19:59:53+08:00",
+  "generatedAt": "2026-06-28T20:25:49+08:00",
   "entries": [
     {
       "rank": 1,
@@ -553,37 +553,37 @@
     },
     {
       "rank": 111,
-      "maskedName": "Tay P.",
+      "maskedName": "Tay K.",
       "totalBallots": 0
     },
     {
       "rank": 112,
-      "maskedName": "Teo T.",
+      "maskedName": "Tay P.",
       "totalBallots": 0
     },
     {
       "rank": 113,
-      "maskedName": "Therese G.",
+      "maskedName": "Teo T.",
       "totalBallots": 0
     },
     {
       "rank": 114,
-      "maskedName": "Tok***",
+      "maskedName": "Therese G.",
       "totalBallots": 0
     },
     {
       "rank": 115,
-      "maskedName": "Wei X.",
+      "maskedName": "Tok***",
       "totalBallots": 0
     },
     {
       "rank": 116,
-      "maskedName": "Yapa P.",
+      "maskedName": "Wei X.",
       "totalBallots": 0
     },
     {
       "rank": 117,
-      "maskedName": "Yeo L.",
+      "maskedName": "Yapa P.",
       "totalBallots": 0
     },
     {
@@ -593,16 +593,21 @@
     },
     {
       "rank": 119,
-      "maskedName": "Yeo W.",
+      "maskedName": "Yeo L.",
       "totalBallots": 0
     },
     {
       "rank": 120,
-      "maskedName": "Yeoh M.",
+      "maskedName": "Yeo W.",
       "totalBallots": 0
     },
     {
       "rank": 121,
+      "maskedName": "Yeoh M.",
+      "totalBallots": 0
+    },
+    {
+      "rank": 122,
       "maskedName": "Zihe G.",
       "totalBallots": 0
     }
