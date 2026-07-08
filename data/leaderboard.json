@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T02:02:06+08:00",
+  "generatedAt": "2026-07-08T14:12:18+08:00",
   "entries": [
     {
       "rank": 1,
@@ -598,51 +598,56 @@
     },
     {
       "rank": 120,
-      "maskedName": "TE* TZ* YAN*",
+      "maskedName": "TEN* SIE* LA*",
       "totalBallots": 0
     },
     {
       "rank": 121,
-      "maskedName": "THERE** GA* SALVA*** LI*",
+      "maskedName": "TE* TZ* YAN*",
       "totalBallots": 0
     },
     {
       "rank": 122,
-      "maskedName": "TO*",
+      "maskedName": "THERE** GA* SALVA*** LI*",
       "totalBallots": 0
     },
     {
       "rank": 123,
-      "maskedName": "WE* XIAN* G*",
+      "maskedName": "TO*",
       "totalBallots": 0
     },
     {
       "rank": 124,
-      "maskedName": "YAP* PATHIRAN***** YASAN*** ANURA*** PATHIR***",
+      "maskedName": "WE* XIAN* G*",
       "totalBallots": 0
     },
     {
       "rank": 125,
-      "maskedName": "YE* LA* HOO*",
+      "maskedName": "YAP* PATHIRAN***** YASAN*** ANURA*** PATHIR***",
       "totalBallots": 0
     },
     {
       "rank": 126,
-      "maskedName": "YE* LA* HU*",
+      "maskedName": "YE* LA* HOO*",
       "totalBallots": 0
     },
     {
       "rank": 127,
-      "maskedName": "YE* WE* QI*",
+      "maskedName": "YE* LA* HU*",
       "totalBallots": 0
     },
     {
       "rank": 128,
-      "maskedName": "YEO* MAND*",
+      "maskedName": "YE* WE* QI*",
       "totalBallots": 0
     },
     {
       "rank": 129,
+      "maskedName": "YEO* MAND*",
+      "totalBallots": 0
+    },
+    {
+      "rank": 130,
       "maskedName": "ZIH* GU*",
       "totalBallots": 0
     }
