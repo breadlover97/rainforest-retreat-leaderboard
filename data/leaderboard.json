@@ -1,739 +1,739 @@
 {
-  "generatedAt": "2026-08-11T11:49:02+08:00",
+  "generatedAt": "2026-08-11T12:22:04+08:00",
   "entries": [
     {
       "rank": 1,
+      "maskedName": "DERE* KO* JIN* JI*",
+      "totalBallots": 2
+    },
+    {
+      "rank": 2,
+      "maskedName": "GIN* LO* Y* PI*",
+      "totalBallots": 2
+    },
+    {
+      "rank": 3,
+      "maskedName": "JEWE* SE* KA* LI*",
+      "totalBallots": 2
+    },
+    {
+      "rank": 4,
+      "maskedName": "KA* YAN* TA*",
+      "totalBallots": 2
+    },
+    {
+      "rank": 5,
+      "maskedName": "RYA* LE* JI* XIA*",
+      "totalBallots": 2
+    },
+    {
+      "rank": 6,
+      "maskedName": "SEA* JI* SHEN*",
+      "totalBallots": 2
+    },
+    {
+      "rank": 7,
+      "maskedName": "SH* QIN*",
+      "totalBallots": 2
+    },
+    {
+      "rank": 8,
+      "maskedName": "AMAN** ON*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 9,
+      "maskedName": "AMAR* LI* TONGY**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 10,
+      "maskedName": "BRAND** AN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 11,
+      "maskedName": "BRYA* TA* YON* ER*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 12,
+      "maskedName": "CELI** AN* SH* HU*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 13,
+      "maskedName": "CHI* HU* YIN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 14,
+      "maskedName": "CHI* Y* HA* KENNE**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 15,
+      "maskedName": "CHON* HU* PIN* SHER**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 16,
+      "maskedName": "DAR* ON*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 17,
+      "maskedName": "DENI** N*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 18,
+      "maskedName": "DIN* JIANB**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 19,
+      "maskedName": "ERI* WON* KE* THE*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 20,
+      "maskedName": "EVEL** WON* PA* E*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 21,
+      "maskedName": "GIA* YA* HU*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 22,
+      "maskedName": "HANN** LO*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 23,
+      "maskedName": "HEN* ZH* FEN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 24,
+      "maskedName": "H* SHI* JI*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 25,
+      "maskedName": "HO* KA* CHIE*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 26,
+      "maskedName": "HU* Y* NGI*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 27,
+      "maskedName": "JALV** CHA* JI* XIAN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 28,
+      "maskedName": "JARR** CHON* WE* HUN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 29,
+      "maskedName": "JOA* L*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 30,
+      "maskedName": "JOE* CHEN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 31,
+      "maskedName": "JOSEPH*** TE* A* BOO*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 32,
+      "maskedName": "KATHER*** HEN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 33,
+      "maskedName": "KEFA* LIE*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 34,
+      "maskedName": "KON* O* ME*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 35,
+      "maskedName": "LE* PE* LI* CALANT***",
+      "totalBallots": 1
+    },
+    {
+      "rank": 36,
+      "maskedName": "LE* XI* Y*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 37,
+      "maskedName": "LION** CHU*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 38,
+      "maskedName": "LION** CHU* WE* HUAN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 39,
+      "maskedName": "LO* J* XIA*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 40,
+      "maskedName": "L* JI* NIN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 41,
+      "maskedName": "LYN* MO*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 42,
+      "maskedName": "MAURI** LI*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 43,
+      "maskedName": "PO* LIAN* HON*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 44,
+      "maskedName": "RA* PE*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 45,
+      "maskedName": "RAYMO** GO*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 46,
+      "maskedName": "ROXAN**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 47,
+      "maskedName": "SHER**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 48,
+      "maskedName": "TA* EN* YEE* RACH**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 49,
+      "maskedName": "TA* JIN* HERN*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 50,
+      "maskedName": "TA* MINGZHU**** JOVI**",
+      "totalBallots": 1
+    },
+    {
+      "rank": 51,
+      "maskedName": "TA* WE* XUA*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 52,
+      "maskedName": "TA* PEN* KHOO*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 53,
+      "maskedName": "YE* LA* HU*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 54,
+      "maskedName": "YE* WE* QI*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 55,
+      "maskedName": "YEO* MAND*",
+      "totalBallots": 1
+    },
+    {
+      "rank": 56,
       "maskedName": "ADELA*** YE*",
       "totalBallots": 0
     },
     {
-      "rank": 2,
+      "rank": 57,
       "maskedName": "ADRI** WON* ZH* XUA*",
       "totalBallots": 0
     },
     {
-      "rank": 3,
+      "rank": 58,
       "maskedName": "ALLE* CHON* CHUI* JI*",
       "totalBallots": 0
     },
     {
-      "rank": 4,
+      "rank": 59,
       "maskedName": "ALPHON*** JAME* FO*",
       "totalBallots": 0
     },
     {
-      "rank": 5,
-      "maskedName": "AMAN** ON*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 6,
-      "maskedName": "AMAR* LI* TONGY**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 7,
+      "rank": 60,
       "maskedName": "AN* JIN* XUA*",
       "totalBallots": 0
     },
     {
-      "rank": 8,
+      "rank": 61,
       "maskedName": "ASHI**",
       "totalBallots": 0
     },
     {
-      "rank": 9,
-      "maskedName": "BRAND** AN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 10,
+      "rank": 62,
       "maskedName": "BRAND** LI*",
       "totalBallots": 0
     },
     {
-      "rank": 11,
+      "rank": 63,
       "maskedName": "BREN** CHEN*",
       "totalBallots": 0
     },
     {
-      "rank": 12,
+      "rank": 64,
       "maskedName": "BRYA*",
       "totalBallots": 0
     },
     {
-      "rank": 13,
-      "maskedName": "BRYA* TA* YON* ER*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 14,
+      "rank": 65,
       "maskedName": "CAMM* LI* ZH* Y*",
       "totalBallots": 0
     },
     {
-      "rank": 15,
-      "maskedName": "CELI** AN* SH* HU*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 16,
+      "rank": 66,
       "maskedName": "CHA* YEN* YEA* ANDR**",
       "totalBallots": 0
     },
     {
-      "rank": 17,
+      "rank": 67,
       "maskedName": "CHE* YOON* HU*",
       "totalBallots": 0
     },
     {
-      "rank": 18,
+      "rank": 68,
       "maskedName": "CHEN* LU* KHE*",
       "totalBallots": 0
     },
     {
-      "rank": 19,
+      "rank": 69,
       "maskedName": "CHEO** JI* RON*",
       "totalBallots": 0
     },
     {
-      "rank": 20,
-      "maskedName": "CHI* HU* YIN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 21,
-      "maskedName": "CHI* Y* HA* KENNE**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 22,
+      "rank": 70,
       "maskedName": "CHI* WE* KIA*",
       "totalBallots": 0
     },
     {
-      "rank": 23,
-      "maskedName": "CHON* HU* PIN* SHER**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 24,
+      "rank": 71,
       "maskedName": "CHO* SEO* ZHE*",
       "totalBallots": 0
     },
     {
-      "rank": 25,
-      "maskedName": "DAR* ON*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 26,
-      "maskedName": "DENI** N*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 27,
-      "maskedName": "DERE* KO* JIN* JI*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 28,
-      "maskedName": "DIN* JIANB**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 29,
+      "rank": 72,
       "maskedName": "DIO* TA* Z* YIN*",
       "totalBallots": 0
     },
     {
-      "rank": 30,
+      "rank": 73,
       "maskedName": "DIVI** VIMR*",
       "totalBallots": 0
     },
     {
-      "rank": 31,
+      "rank": 74,
       "maskedName": "DONOV** TA* WE* XUA*",
       "totalBallots": 0
     },
     {
-      "rank": 32,
+      "rank": 75,
       "maskedName": "ELIZAB*** O*",
       "totalBallots": 0
     },
     {
-      "rank": 33,
+      "rank": 76,
       "maskedName": "ELLI** KO*",
       "totalBallots": 0
     },
     {
-      "rank": 34,
-      "maskedName": "ERI* WON* KE* THE*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 35,
-      "maskedName": "EVEL** WON* PA* E*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 36,
+      "rank": 77,
       "maskedName": "FIDE* TA*",
       "totalBallots": 0
     },
     {
-      "rank": 37,
-      "maskedName": "GIA* YA* HU*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 38,
-      "maskedName": "GIN* LO* Y* PI*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 39,
+      "rank": 78,
       "maskedName": "GO* JU* Z* GAVI*",
       "totalBallots": 0
     },
     {
-      "rank": 40,
+      "rank": 79,
       "maskedName": "GO* XU* Q*",
       "totalBallots": 0
     },
     {
-      "rank": 41,
+      "rank": 80,
       "maskedName": "GU* ZIH*",
       "totalBallots": 0
     },
     {
-      "rank": 42,
-      "maskedName": "HANN** LO*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 43,
-      "maskedName": "HEN* ZH* FEN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 44,
+      "rank": 81,
       "maskedName": "HERLI** BT* DULKI***",
       "totalBallots": 0
     },
     {
-      "rank": 45,
-      "maskedName": "H* SHI* JI*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 46,
+      "rank": 82,
       "maskedName": "HO* EILE**",
       "totalBallots": 0
     },
     {
-      "rank": 47,
-      "maskedName": "HO* KA* CHIE*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 48,
-      "maskedName": "HU* Y* NGI*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 49,
+      "rank": 83,
       "maskedName": "IREN* GU*",
       "totalBallots": 0
     },
     {
-      "rank": 50,
+      "rank": 84,
       "maskedName": "IRWI* HEN* DIN* XIAN*",
       "totalBallots": 0
     },
     {
-      "rank": 51,
-      "maskedName": "JALV** CHA* JI* XIAN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 52,
-      "maskedName": "JARR** CHON* WE* HUN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 53,
+      "rank": 85,
       "maskedName": "JASAR*** CHE* JI* XUA*",
       "totalBallots": 0
     },
     {
-      "rank": 54,
+      "rank": 86,
       "maskedName": "JASO* N*",
       "totalBallots": 0
     },
     {
-      "rank": 55,
+      "rank": 87,
       "maskedName": "JEMAI** N*",
       "totalBallots": 0
     },
     {
-      "rank": 56,
+      "rank": 88,
       "maskedName": "JEO* JAEW**",
       "totalBallots": 0
     },
     {
-      "rank": 57,
-      "maskedName": "JEWE* SE* KA* LI*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 58,
-      "maskedName": "JOA* L*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 59,
-      "maskedName": "JOE* CHEN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 60,
-      "maskedName": "JOSEPH*** TE* A* BOO*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 61,
+      "rank": 89,
       "maskedName": "JOSH** HEN* SIAN* BOO*",
       "totalBallots": 0
     },
     {
-      "rank": 62,
+      "rank": 90,
       "maskedName": "JUST** TE*",
       "totalBallots": 0
     },
     {
-      "rank": 63,
+      "rank": 91,
       "maskedName": "KA* LIN* SOE*",
       "totalBallots": 0
     },
     {
-      "rank": 64,
-      "maskedName": "KA* YAN* TA*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 65,
-      "maskedName": "KATHER*** HEN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 66,
-      "maskedName": "KEFA* LIE*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 67,
+      "rank": 92,
       "maskedName": "KELL* LI* KI* YE*",
       "totalBallots": 0
     },
     {
-      "rank": 68,
+      "rank": 93,
       "maskedName": "KEVI* AN* QI* Y*",
       "totalBallots": 0
     },
     {
-      "rank": 69,
+      "rank": 94,
       "maskedName": "KIRS** LE* KAN* RO*",
       "totalBallots": 0
     },
     {
-      "rank": 70,
+      "rank": 95,
       "maskedName": "KOA* JU* L*",
       "totalBallots": 0
     },
     {
-      "rank": 71,
+      "rank": 96,
       "maskedName": "KO* WE* WE*",
       "totalBallots": 0
     },
     {
-      "rank": 72,
-      "maskedName": "KON* O* ME*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 73,
+      "rank": 97,
       "maskedName": "LAREI** SN*",
       "totalBallots": 0
     },
     {
-      "rank": 74,
-      "maskedName": "LE* PE* LI* CALANT***",
-      "totalBallots": 0
-    },
-    {
-      "rank": 75,
+      "rank": 98,
       "maskedName": "LE* WE* RE*",
       "totalBallots": 0
     },
     {
-      "rank": 76,
-      "maskedName": "LE* XI* Y*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 77,
+      "rank": 99,
       "maskedName": "LI* CHRIST*** BASA*",
       "totalBallots": 0
     },
     {
-      "rank": 78,
+      "rank": 100,
       "maskedName": "LI* JU* HA*",
       "totalBallots": 0
     },
     {
-      "rank": 79,
+      "rank": 101,
       "maskedName": "LI* L* XUA* JAMI*",
       "totalBallots": 0
     },
     {
-      "rank": 80,
+      "rank": 102,
       "maskedName": "LIND* FO* MU* YEN*",
       "totalBallots": 0
     },
     {
-      "rank": 81,
-      "maskedName": "LION** CHU*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 82,
-      "maskedName": "LION** CHU* WE* HUAN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 83,
-      "maskedName": "LO* J* XIA*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 84,
-      "maskedName": "L* JI* NIN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 85,
-      "maskedName": "LYN* MO*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 86,
+      "rank": 103,
       "maskedName": "MALV** RA*",
       "totalBallots": 0
     },
     {
-      "rank": 87,
+      "rank": 104,
       "maskedName": "MATIL** LIE* YU* XUA*",
       "totalBallots": 0
     },
     {
-      "rank": 88,
-      "maskedName": "MAURI** LI*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 89,
+      "rank": 105,
       "maskedName": "MEGA* GO* JI* HERN*",
       "totalBallots": 0
     },
     {
-      "rank": 90,
+      "rank": 106,
       "maskedName": "MINGH**",
       "totalBallots": 0
     },
     {
-      "rank": 91,
+      "rank": 107,
       "maskedName": "MOHAM*** AZI* BI* ZAMR*",
       "totalBallots": 0
     },
     {
-      "rank": 92,
+      "rank": 108,
       "maskedName": "MUHAM** NURSHAH**** BI* NORAD**",
       "totalBallots": 0
     },
     {
-      "rank": 93,
+      "rank": 109,
       "maskedName": "MUHAM*** SUHA**",
       "totalBallots": 0
     },
     {
-      "rank": 94,
+      "rank": 110,
       "maskedName": "NADO* PANWO**",
       "totalBallots": 0
     },
     {
-      "rank": 95,
+      "rank": 111,
       "maskedName": "N* G* TION* (NAS**",
       "totalBallots": 0
     },
     {
-      "rank": 96,
+      "rank": 112,
       "maskedName": "NGI* CHI* KHUN*",
       "totalBallots": 0
     },
     {
-      "rank": 97,
+      "rank": 113,
       "maskedName": "NICC* ALYSS** PARI**",
       "totalBallots": 0
     },
     {
-      "rank": 98,
+      "rank": 114,
       "maskedName": "NICHO*** SIE*",
       "totalBallots": 0
     },
     {
-      "rank": 99,
+      "rank": 115,
       "maskedName": "NICO** GO* L* YIN*",
       "totalBallots": 0
     },
     {
-      "rank": 100,
+      "rank": 116,
       "maskedName": "NURU* KHAIRUN**** BINT* RAZA**",
       "totalBallots": 0
     },
     {
-      "rank": 101,
-      "maskedName": "PO* LIAN* HON*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 102,
+      "rank": 117,
       "maskedName": "PRINC*** DYA* LE* ROGE*",
       "totalBallots": 0
     },
     {
-      "rank": 103,
-      "maskedName": "RA* PE*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 104,
-      "maskedName": "RAYMO** GO*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 105,
+      "rank": 118,
       "maskedName": "RENE*",
       "totalBallots": 0
     },
     {
-      "rank": 106,
+      "rank": 119,
       "maskedName": "RESH** KAU*",
       "totalBallots": 0
     },
     {
-      "rank": 107,
+      "rank": 120,
       "maskedName": "RE* TA*",
       "totalBallots": 0
     },
     {
-      "rank": 108,
+      "rank": 121,
       "maskedName": "RING* PA* SING*",
       "totalBallots": 0
     },
     {
-      "rank": 109,
+      "rank": 122,
       "maskedName": "ROME** DANI** ETHA* LUST**",
       "totalBallots": 0
     },
     {
-      "rank": 110,
-      "maskedName": "ROXAN**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 111,
-      "maskedName": "RYA* LE* JI* XIA*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 112,
+      "rank": 123,
       "maskedName": "RYA* TA*",
       "totalBallots": 0
     },
     {
-      "rank": 113,
+      "rank": 124,
       "maskedName": "SARA* RAHI*",
       "totalBallots": 0
     },
     {
-      "rank": 114,
-      "maskedName": "SEA* JI* SHEN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 115,
-      "maskedName": "SHER**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 116,
+      "rank": 125,
       "maskedName": "SHO* KA* LIN*",
       "totalBallots": 0
     },
     {
-      "rank": 117,
+      "rank": 126,
       "maskedName": "SHREETH**** PIRASH****",
       "totalBallots": 0
     },
     {
-      "rank": 118,
+      "rank": 127,
       "maskedName": "SHRE** BOS*",
       "totalBallots": 0
     },
     {
-      "rank": 119,
-      "maskedName": "SH* QIN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 120,
+      "rank": 128,
       "maskedName": "SN* EN* KIA*",
       "totalBallots": 0
     },
     {
-      "rank": 121,
+      "rank": 129,
       "maskedName": "SONI* LE*",
       "totalBallots": 0
     },
     {
-      "rank": 122,
+      "rank": 130,
       "maskedName": "SUWAN** ONMI** (JIB*",
       "totalBallots": 0
     },
     {
-      "rank": 123,
+      "rank": 131,
       "maskedName": "SYAH**",
       "totalBallots": 0
     },
     {
-      "rank": 124,
+      "rank": 132,
       "maskedName": "SYE* MATI* MIRZ*",
       "totalBallots": 0
     },
     {
-      "rank": 125,
+      "rank": 133,
       "maskedName": "TA* BA* CHE* JES*",
       "totalBallots": 0
     },
     {
-      "rank": 126,
-      "maskedName": "TA* EN* YEE* RACH**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 127,
+      "rank": 134,
       "maskedName": "TA* JIA* WE* CLARE***",
       "totalBallots": 0
     },
     {
-      "rank": 128,
-      "maskedName": "TA* JIN* HERN*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 129,
-      "maskedName": "TA* MINGZHU**** JOVI**",
-      "totalBallots": 0
-    },
-    {
-      "rank": 130,
-      "maskedName": "TA* WE* XUA*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 131,
+      "rank": 135,
       "maskedName": "TA* Y* X* BRADL**",
       "totalBallots": 0
     },
     {
-      "rank": 132,
+      "rank": 136,
       "maskedName": "TA* YO* MI*",
       "totalBallots": 0
     },
     {
-      "rank": 133,
+      "rank": 137,
       "maskedName": "TA* KA* E*",
       "totalBallots": 0
     },
     {
-      "rank": 134,
+      "rank": 138,
       "maskedName": "TA* KA* XUA*",
       "totalBallots": 0
     },
     {
-      "rank": 135,
-      "maskedName": "TA* PEN* KHOO*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 136,
+      "rank": 139,
       "maskedName": "TE* JI* TON*",
       "totalBallots": 0
     },
     {
-      "rank": 137,
+      "rank": 140,
       "maskedName": "TEN* SIE* LA*",
       "totalBallots": 0
     },
     {
-      "rank": 138,
+      "rank": 141,
       "maskedName": "TE* TZ* YAN*",
       "totalBallots": 0
     },
     {
-      "rank": 139,
+      "rank": 142,
       "maskedName": "THERE** GA* SALVA*** LI*",
       "totalBallots": 0
     },
     {
-      "rank": 140,
+      "rank": 143,
       "maskedName": "TO*",
       "totalBallots": 0
     },
     {
-      "rank": 141,
+      "rank": 144,
       "maskedName": "TON* CHE*",
       "totalBallots": 0
     },
     {
-      "rank": 142,
+      "rank": 145,
       "maskedName": "WE* XIAN* G*",
       "totalBallots": 0
     },
     {
-      "rank": 143,
+      "rank": 146,
       "maskedName": "YAP* PATHIRAN***** YASAN*** ANURA*** PATHIR***",
       "totalBallots": 0
     },
     {
-      "rank": 144,
-      "maskedName": "YE* LA* HOO*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 145,
-      "maskedName": "YE* LA* HU*",
-      "totalBallots": 0
-    },
-    {
-      "rank": 146,
-      "maskedName": "YE* WE* QI*",
-      "totalBallots": 0
-    },
-    {
       "rank": 147,
-      "maskedName": "YEO* MAND*",
+      "maskedName": "YE* LA* HOO*",
       "totalBallots": 0
     },
     {

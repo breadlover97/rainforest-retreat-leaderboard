@@ -16,6 +16,7 @@ const mobileLeaderboardQuery = window.matchMedia("(max-width: 760px)");
 
 let leaderboardEntries = [];
 let leaderboardCurrentPage = 1;
+let leaderboardEmptyMessage = "No ballot entries yet.";
 
 const formatSyncTime = (isoString) => {
   if (!isoString) return "Not synced yet";
@@ -41,7 +42,7 @@ const scrollLeaderboardToList = () => {
   });
 };
 
-const renderTableRows = (entries) => {
+const renderTableRows = (entries, emptyMessage = "No ballot entries yet.") => {
   body.replaceChildren();
 
   if (!entries.length) {
@@ -49,7 +50,7 @@ const renderTableRows = (entries) => {
     const cell = document.createElement("td");
     cell.colSpan = 3;
     cell.className = "empty-state";
-    cell.textContent = "No ballot entries yet.";
+    cell.textContent = emptyMessage;
     row.append(cell);
     body.append(row);
     return;
@@ -76,8 +77,9 @@ const renderTableRows = (entries) => {
   }
 };
 
-const renderRows = (entries) => {
+const renderRows = (entries, emptyMessage = leaderboardEmptyMessage) => {
   leaderboardEntries = entries;
+  leaderboardEmptyMessage = emptyMessage;
 
   const isMobile = mobileLeaderboardQuery.matches;
   const shouldPaginate = isMobile && entries.length > 10;
@@ -104,7 +106,7 @@ const renderRows = (entries) => {
         : `Page ${leaderboardCurrentPage} of ${totalPages}`;
   }
 
-  renderTableRows(visibleEntries);
+  renderTableRows(visibleEntries, leaderboardEmptyMessage);
 };
 
 fetch("data/leaderboard.json", { cache: "no-store" })
@@ -114,9 +116,19 @@ fetch("data/leaderboard.json", { cache: "no-store" })
   })
   .then((data) => {
     const entries = Array.isArray(data.entries) ? data.entries : [];
-    renderRows(entries);
+    const isAllZeroSnapshot =
+      entries.length > 0 && entries.every((entry) => Number(entry.totalBallots) === 0);
+
+    renderRows(
+      isAllZeroSnapshot ? [] : entries,
+      isAllZeroSnapshot
+        ? "Final ballot counts are being verified. Please check back after the next update."
+        : undefined,
+    );
     lastSync.textContent = formatSyncTime(data.generatedAt);
-    entryCount.textContent = `${entries.length} participant${entries.length === 1 ? "" : "s"}`;
+    entryCount.textContent = isAllZeroSnapshot
+      ? "Verification in progress"
+      : `${entries.length} participant${entries.length === 1 ? "" : "s"}`;
   })
   .catch(() => {
     lastSync.textContent = "Sync unavailable";

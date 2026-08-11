@@ -97,6 +97,50 @@ h1 {
   line-height: 1.6;
 }
 
+.giveaway-status {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 14px 18px;
+  align-items: center;
+  margin-top: 4px;
+  padding: 14px 16px;
+  border: 1px solid rgba(31, 107, 75, 0.28);
+  border-left: 5px solid var(--forest);
+  background:
+    linear-gradient(90deg, rgba(220, 235, 213, 0.92), rgba(251, 249, 244, 0.82)),
+    var(--panel);
+}
+
+.giveaway-status p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.status-badge {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 7px;
+  align-items: center;
+  padding: 7px 10px;
+  background: var(--forest);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status-badge span {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
 .sync-card {
   grid-column: 2;
   display: flex;
@@ -605,6 +649,13 @@ details[open] summary::after {
   .subcopy,
   .sync-card {
     grid-column: 1;
+  }
+
+  .giveaway-status {
+    grid-column: 1;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .campaign-details {
