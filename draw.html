@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rainforest Retreat — Lucky Draw Wheel</title>
+    <meta
+      name="description"
+      content="The auditable weighted lucky draw wheel for The Rainforest Retreat Giveaway."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B3%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="draw.css" />
+  </head>
+  <body>
+    <header class="draw-topbar">
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Leaderboard</a>
+      <span class="tool-badge"><span aria-hidden="true">✓</span> Auditable weighted draw</span>
+    </header>
+
+    <main class="draw-shell">
+      <section class="draw-hero" aria-labelledby="draw-title">
+        <div>
+          <p class="eyebrow">Official draw experience</p>
+          <h1 id="draw-title">Rainforest Retreat Lucky Draw</h1>
+          <p class="hero-copy">
+            A rainforest-inspired wheel with ballot-weighted chances, unique winners and a
+            reproducible SHA-256 audit trail.
+          </p>
+        </div>
+        <div class="draw-date">
+          <span>Live draw</span>
+          <strong>21 August 2026 · 8:00 pm SGT</strong>
+        </div>
+      </section>
+
+      <aside class="draw-warning" aria-label="Draw preparation notice">
+        <span aria-hidden="true">!</span>
+        <p>
+          <strong>Use only after the ballot review is complete.</strong> The public leaderboard is
+          shown as a preview. An official spin requires a separately frozen CSV with stable opaque
+          participant IDs; the file stays on this device and is never uploaded.
+        </p>
+      </aside>
+
+      <section class="draw-workspace" aria-label="Lucky draw wheel and controls">
+        <div class="wheel-card">
+          <div class="wheel-card-heading">
+            <div>
+              <p class="stage-label" id="wheel-mode">Previewing public leaderboard</p>
+              <h2 id="current-prize">Grand Prize</h2>
+            </div>
+            <div class="wheel-stats" aria-label="Wheel totals">
+              <span><strong id="eligible-count">—</strong> eligible</span>
+              <span><strong id="ballot-count">—</strong> ballots</span>
+            </div>
+          </div>
+
+          <div class="wheel-stage" id="wheel-stage">
+            <div class="wheel-pointer" aria-hidden="true"></div>
+            <div class="wheel-rotator" id="wheel-rotator">
+              <canvas
+                id="draw-wheel"
+                width="760"
+                height="760"
+                role="img"
+                aria-label="Weighted lucky draw wheel"
+              ></canvas>
+            </div>
+            <button class="wheel-centre" id="wheel-spin" type="button" disabled>
+              <span aria-hidden="true">🌿</span>
+              <strong>Spin</strong>
+            </button>
+          </div>
+
+          <p class="wheel-message" id="wheel-message" aria-live="polite">
+            Loading the public preview…
+          </p>
+        </div>
+
+        <aside class="control-card" aria-label="Official draw controls">
+          <section class="control-section">
+            <div class="control-heading">
+              <span>1</span>
+              <div>
+                <h2>Load the frozen ballot file</h2>
+                <p>Exactly: participant_id, display_name, ballots</p>
+              </div>
+            </div>
+
+            <input id="snapshot-file" type="file" accept=".csv,text/csv" />
+            <label class="file-picker" for="snapshot-file">
+              <span aria-hidden="true">↑</span>
+              <strong>Choose frozen CSV</strong>
+              <small>Processed locally in this browser</small>
+            </label>
+            <a class="template-link" href="draw-snapshot-template.csv" download>
+              Download blank CSV template
+            </a>
+
+            <dl class="snapshot-details" id="snapshot-details">
+              <div>
+                <dt>File</dt>
+                <dd id="snapshot-name">Not loaded</dd>
+              </div>
+              <div>
+                <dt>SHA-256</dt>
+                <dd><code id="snapshot-hash">—</code></dd>
+              </div>
+            </dl>
+            <p class="commitment-note">
+              Record or publish this SHA-256 before the announced seed becomes available.
+            </p>
+          </section>
+
+          <section class="control-section">
+            <div class="control-heading">
+              <span>2</span>
+              <div>
+                <h2>Record the public seed</h2>
+                <p>Use the value from your pre-announced source.</p>
+              </div>
+            </div>
+
+            <label class="field-label" for="seed-reference">Seed source / reference</label>
+            <input
+              id="seed-reference"
+              type="text"
+              maxlength="500"
+              autocomplete="off"
+              placeholder="e.g. public beacon and round"
+            />
+
+            <label class="field-label" for="draw-seed">Exact seed value</label>
+            <textarea
+              id="draw-seed"
+              rows="3"
+              maxlength="4096"
+              spellcheck="false"
+              autocomplete="off"
+              placeholder="Paste the announced value exactly"
+            ></textarea>
+            <p class="field-note">Do not try candidate seeds against the final snapshot.</p>
+          </section>
+
+          <section class="control-section run-section">
+            <div class="control-heading">
+              <span>3</span>
+              <div>
+                <h2>Lock and reveal</h2>
+                <p>The four winners are fixed before the first animation.</p>
+              </div>
+            </div>
+
+            <label class="confirmation-row" for="freeze-confirmation">
+              <input id="freeze-confirmation" type="checkbox" />
+              <span>
+                I confirm this is the verified final list and its SHA-256 was recorded before the
+                seed became available.
+              </span>
+            </label>
+
+            <button class="primary-action" id="spin-button" type="button" disabled>
+              Spin for Grand Prize
+            </button>
+            <div class="secondary-actions">
+              <button id="download-audit" type="button" disabled>Download audit</button>
+              <button id="reset-draw" type="button" disabled>Reset</button>
+            </div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="results-card" aria-labelledby="results-title">
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">Prize order</p>
+            <h2 id="results-title">Grand first, then three gift prizes</h2>
+          </div>
+          <p>Each person can win once. All their remaining tickets are skipped.</p>
+        </div>
+        <ol class="result-list" id="result-list">
+          <li data-prize-index="0"><span>Grand Prize</span><strong>Awaiting draw</strong></li>
+          <li data-prize-index="1"><span>Gift Prize 1</span><strong>Awaiting draw</strong></li>
+          <li data-prize-index="2"><span>Gift Prize 2</span><strong>Awaiting draw</strong></li>
+          <li data-prize-index="3"><span>Gift Prize 3</span><strong>Awaiting draw</strong></li>
+        </ol>
+      </section>
+
+      <section class="fairness-card" aria-labelledby="fairness-title">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2 id="fairness-title">The wheel reveals the result—it does not choose it.</h2>
+        </div>
+        <div class="fairness-grid">
+          <article>
+            <span>01</span>
+            <h3>Weighted tickets</h3>
+            <p>One virtual ticket is created for every ballot chance.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Reproducible selection</h3>
+            <p>Every ticket is ranked using the frozen-file hash, public seed and SHA-256.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Unique winners</h3>
+            <p>The first four unique IDs receive the prizes in the published order.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Downloadable evidence</h3>
+            <p>The completed draw exports the input hash, seed and winning ticket hashes.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="winner-dialog" id="winner-dialog" aria-labelledby="winner-prize">
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+      <p class="dialog-kicker">Winner</p>
+      <h2 id="winner-prize">Grand Prize</h2>
+      <strong class="winner-name" id="winner-name">—</strong>
+      <p id="winner-detail">—</p>
+      <button id="continue-draw" type="button">Continue</button>
+    </dialog>
+
+    <script type="module" src="draw.js"></script>
+  </body>
+</html>

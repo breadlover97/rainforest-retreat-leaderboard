@@ -190,6 +190,56 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.draw-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 24px;
+  padding: 22px 24px;
+  border: 1px solid rgba(185, 130, 45, 0.42);
+  border-left: 6px solid var(--gold);
+  background:
+    linear-gradient(110deg, rgba(245, 229, 197, 0.96), rgba(255, 255, 255, 0.9)),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.draw-callout-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.draw-callout h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+}
+
+.draw-callout-copy > p:last-child {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.draw-callout-link {
+  display: inline-flex;
+  min-height: 46px;
+  flex: 0 0 auto;
+  gap: 10px;
+  align-items: center;
+  padding: 11px 16px;
+  background: var(--forest);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.draw-callout-link:hover,
+.draw-callout-link:focus-visible {
+  background: #174f39;
+}
+
 .campaign-details {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -661,6 +711,17 @@ details[open] summary::after {
   .campaign-details {
     grid-template-columns: 1fr;
     padding: 22px;
+  }
+
+  .draw-callout {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .draw-callout-link {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .prize-earning-panel .prize-list,
