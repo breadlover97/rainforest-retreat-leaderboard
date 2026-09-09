@@ -12,6 +12,11 @@ function testLeaderboardSync() {
 }
 
 function triggerLeaderboardSync_(source) {
+  // Campaign closed. Keep false unless a future campaign is explicitly reopened.
+  // This repository copy does not update the separate live Apps Script project.
+  const CAMPAIGN_SYNC_ENABLED = false;
+  if (!CAMPAIGN_SYNC_ENABLED) return;
+
   const lock = LockService.getScriptLock();
   if (!lock.tryLock(5000)) return;
 

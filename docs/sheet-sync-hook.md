@@ -1,8 +1,9 @@
-# Sheet Sync Hook
+# Retired Sheet Sync Hook
 
-This adds near-live leaderboard updates when a new Google Form response lands in the linked Sheet.
+The Rainforest Retreat Giveaway has ended. This integration is retired and must remain inactive
+while the campaign is closed. See [campaign closeout](campaign-closeout.md) for shutdown status.
 
-## How It Works
+## Previous Integration
 
 ```text
 Google Form submission
@@ -13,52 +14,59 @@ Google Form submission
   -> GitHub Pages serves the refreshed leaderboard
 ```
 
-The public website still reads only `data/leaderboard.json`, so the privacy boundary remains the same:
+The former schedule ran at 12am and 12pm Singapore time. Both the schedule and the
+`repository_dispatch` event have been removed from the workflow source. GitHub's live
+`Sync leaderboard` workflow is also disabled manually.
 
-- rank
-- masked participant name
-- total ballots
-- last generated timestamp
+The public website reads the preserved `data/leaderboard.json`, which contains only rank, masked
+participant name, total ballots, and the last generated timestamp. Raw form responses, phone
+numbers, advisor names, and referrer relationships must remain private.
 
-No raw form responses, phone numbers, advisor names, or referrer relationships are published.
+## Saved Apps Script Is Inactive
 
-## GitHub Setup
+`scripts/google_apps_script_sheet_sync.gs` now sets `CAMPAIGN_SYNC_ENABLED = false`. Both
+`onFormSubmit` and `testLeaderboardSync` stop before accessing script properties or making an
+outbound request. The existing integration source is retained for reference and future reuse.
 
-Create a fine-grained GitHub personal access token.
+Changing this repository file does **not** update the live Apps Script project. During closeout
+on 9 September 2026, the same false guard was saved separately in the live project and an
+`onFormSubmit` verification run completed successfully at 11:30:15–11:30:16am Singapore time.
+The callback is inactive before lock acquisition, token access, or a GitHub dispatch.
 
-Recommended settings:
+Two user-owned triggers still point to `onFormSubmit`: one on form submission and one on
+spreadsheet open. Permanent removal is pending the user's approval. Their callback is already
+inactive, but the trigger records are still installed. Stored token and linked Form settings
+have not been verified as cleaned up.
 
-- Resource owner: `breadlover97`
-- Repository access: only `breadlover97/rainforest-retreat-leaderboard`
-- Repository permissions: `Contents: Read and write`
+## Google-Side Retirement
 
-This permission is needed because GitHub's `repository_dispatch` endpoint requires write access to repository contents.
+1. Open the campaign Sheet, then **Extensions → Apps Script**. Confirm the project belongs to
+   this campaign before changing it.
+2. Preserve the existing project source and identify all campaign-specific triggers. Remove
+   the `onFormSubmit` trigger and any campaign-specific time-driven triggers once identified.
+   Check the project under each account that installed triggers; one account's list may not
+   establish that all owners' triggers are gone.
+3. Save the inactive script from this repository in the live project, or apply the same guard
+   to the campaign's existing sync function without overwriting unrelated functions.
+4. Remove the campaign's `GITHUB_DISPATCH_TOKEN` script property after confirming it is no
+   longer used. Revoke a dedicated campaign token in GitHub; a shared token requires checking
+   its other uses before revocation. `LAST_TRIGGERED_AT` can also be removed.
+5. Close response collection in the linked campaign Form and check for separate add-ons or
+   notification rules that may still send campaign messages.
+6. Verify subsequent Apps Script executions and GitHub Actions runs show no campaign sync.
 
-## Google Apps Script Setup
+The GitHub workflow no longer accepts `sheet-sync` dispatches, so a residual Google trigger
+cannot start this workflow. Removing that trigger still matters because it prevents unnecessary
+Google executions and outbound API requests.
 
-1. Open the Google Sheet.
-2. Go to `Extensions` -> `Apps Script`.
-3. Paste the contents of `scripts/google_apps_script_sheet_sync.gs`.
-4. In Apps Script, go to `Project Settings` -> `Script properties`.
-5. Add:
+## Deliberate Future Reuse
 
-```text
-GITHUB_DISPATCH_TOKEN = <your GitHub token>
-```
+Do not resume the old campaign merely to test the integration. For a new campaign, first create
+an appropriate data source, review the public export, preserve the old snapshot and ceremony
+evidence, and approve the new publishing arrangement.
 
-6. Go to `Triggers`.
-7. Add a trigger:
-
-```text
-Function: onFormSubmit
-Event source: From spreadsheet
-Event type: On form submit
-```
-
-8. Run `testLeaderboardSync` once from Apps Script to authorize the script and confirm that GitHub Actions starts.
-
-## Notes
-
-- The script includes a 60-second debounce so repeated submissions do not spam GitHub Actions.
-- The existing 12am and 12pm scheduled sync remains as a fallback.
-- GitHub Pages deployment is not instant. Expect the public site to update in roughly 1-3 minutes after the trigger fires.
+The retained workflow supports manual dispatch only. Re-enable it explicitly in GitHub Actions,
+configure the correct `GOOGLE_SHEETS_SPREADSHEET_ID`, review the tab ID in the workflow, and
+check `refresh_archived_data` to permit a refresh. Automated dispatch or scheduling would require
+a separate, reviewed workflow change. Setting `CAMPAIGN_SYNC_ENABLED = true` alone will not restore
+the retired integration.

@@ -1,6 +1,13 @@
 # Rainforest Retreat Leaderboard
 
-Static GitHub Pages leaderboard for The Rainforest Retreat Giveaway.
+Archived GitHub Pages leaderboard for The Rainforest Retreat Giveaway. The campaign has ended.
+
+Automatic leaderboard updates are retired. Preserve `data/leaderboard.json` as the existing
+published snapshot; closing the campaign does not regenerate participant data. The draw source
+and audit tools remain available for checking the completed ceremony.
+
+See [campaign closeout](docs/campaign-closeout.md) for confirmed shutdown actions and remaining
+Google-side cleanup.
 
 ## Public Data
 
@@ -39,25 +46,25 @@ fourth reveal, download and preserve the versioned JSON ceremony envelope with t
 raw public seed, deployed commit and draw recording. Its `selection_audit` member is the unchanged
 canonical deterministic audit, and `selection_audit_sha256` authenticates that member.
 
-## Sync
+## Retired Sync
 
-The workflow runs at `12:00pm` and `12:00am` Singapore time using:
+The `Sync leaderboard` GitHub Actions workflow was disabled manually on 9 September 2026.
+Its former twice-daily schedule and Google Sheets `repository_dispatch` trigger have been
+removed from the workflow source. The saved Apps Script also defaults to
+`CAMPAIGN_SYNC_ENABLED = false`, so its submission and manual-test handlers return without calling GitHub.
 
-```yaml
-cron: "0 4,16 * * *"
-```
+The same inactive guard was saved separately in the live Apps Script project and its
+`onFormSubmit` handler completed a no-op verification run. Two installable triggers remain
+attached to that inactive handler pending approval to delete them. Script properties and Form
+settings still require separate checks. See the [retired Sheet sync hook](docs/sheet-sync-hook.md).
 
-GitHub schedules may run a few minutes late. The site displays the timestamp from `data/leaderboard.json`.
+Manual workflow support remains for deliberate future reuse. It requires re-enabling the
+workflow in GitHub Actions and checking `refresh_archived_data` when dispatching it. Leave the
+workflow disabled while this campaign is closed.
 
-The workflow can also be triggered by a Google Sheets form-submit hook using GitHub's `repository_dispatch` event. See:
+## Historical Sync Configuration
 
-```text
-docs/sheet-sync-hook.md
-```
-
-## Required Secret
-
-Add this repository secret before enabling the workflow:
+The retained sync implementation expects this repository secret:
 
 - `GOOGLE_SHEETS_SPREADSHEET_ID`: the private spreadsheet ID
 

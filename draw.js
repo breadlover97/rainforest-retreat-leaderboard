@@ -168,7 +168,7 @@ const renderWheel = (participants) => {
 const resetResultList = () => {
   resultItems.forEach((item, index) => {
     item.className = index === 0 && state.csvBytes ? "is-current" : "";
-    item.querySelector("strong").textContent = "Awaiting draw";
+    item.querySelector("strong").textContent = "No replay loaded";
   });
 };
 
@@ -194,16 +194,16 @@ const updateActionState = () => {
 
 const updatePrizeCopy = () => {
   if (state.currentIndex >= PRIZES.length) {
-    currentPrize.textContent = "Draw complete";
-    spinButton.textContent = "Four winners revealed";
-    wheelMessage.textContent = "The audit record is ready to download.";
+    currentPrize.textContent = "Replay complete";
+    spinButton.textContent = "Four replay results revealed";
+    wheelMessage.textContent = "The replay audit is ready to download and compare with the original records.";
     return;
   }
 
   const prize = PRIZES[state.currentIndex];
   currentPrize.textContent = prize;
-  spinButton.textContent = `Spin for ${prize}`;
-  wheelSpin.querySelector("strong").textContent = "Spin";
+  spinButton.textContent = `Replay ${prize}`;
+  wheelSpin.querySelector("strong").textContent = "Replay";
 };
 
 const lockInputs = () => {
@@ -246,8 +246,8 @@ const loadPublicPreview = async () => {
     if (!state.csvBytes && !state.drawSession) {
       renderWheel(state.previewParticipants);
       wheelMessage.textContent = state.previewParticipants.length
-        ? "Preview only. Load the verified frozen CSV to enable an official spin."
-        : "The public preview has no positive ballot entries yet.";
+        ? "Archived preview only. Load the original frozen CSV and recorded seed to replay a historical result."
+        : "The archived preview contains no positive ballot entries.";
     }
   } catch {
     if (!state.csvBytes && !state.drawSession) {
@@ -291,7 +291,7 @@ const clearDrawSession = ({ keepSeed = false } = {}) => {
   snapshotName.textContent = "Not loaded";
   snapshotHash.textContent = "—";
   snapshotHash.removeAttribute("title");
-  wheelMode.textContent = "Previewing public leaderboard";
+  wheelMode.textContent = "Viewing archived ballot snapshot";
   currentPrize.textContent = PRIZES[0];
   resetDraw.textContent = "Reset";
   resetDraw.disabled = true;
@@ -300,7 +300,7 @@ const clearDrawSession = ({ keepSeed = false } = {}) => {
   resetResultList();
   updatePrizeCopy();
   renderWheel(state.previewParticipants);
-  wheelMessage.textContent = "Preview only. Load the verified frozen CSV to enable an official spin.";
+  wheelMessage.textContent = "Archived preview only. Load the original frozen CSV and recorded seed to replay a historical result.";
   updateActionState();
 };
 
@@ -331,9 +331,9 @@ const handleFile = async () => {
     snapshotName.title = file.name;
     snapshotHash.textContent = inputSha256;
     snapshotHash.title = inputSha256;
-    wheelMode.textContent = "Frozen official snapshot loaded";
+    wheelMode.textContent = "Historical ballot file loaded";
     wheelMessage.textContent =
-      "Snapshot validated. Enter the announced seed and confirm the final list to begin.";
+      "File format checked. Enter the original recorded seed to replay; input provenance is not independently verified.";
     renderWheel(participants);
     resetDraw.disabled = false;
     resetResultList();
@@ -435,10 +435,10 @@ const startOrContinueSpin = async () => {
   try {
     if (!state.drawSession) {
       if (!state.csvBytes || !seedReference.value.trim() || !seedInput.value.trim()) {
-        throw new TypeError("Load the final CSV and enter both seed fields first.");
+        throw new TypeError("Load the original frozen CSV and enter both recorded seed fields first.");
       }
       if (!freezeConfirmation.checked) {
-        throw new TypeError("Confirm that the ballot list is verified and frozen first.");
+        throw new TypeError("Confirm that you are using the original inputs for historical verification first.");
       }
 
       state.drawSeed = seedInput.value;
@@ -474,7 +474,7 @@ const startOrContinueSpin = async () => {
     const duration = reduceMotion ? 0 : 7200;
     state.rotation += (reduceMotion ? 0 : 6 * 360) + alignment;
     rotator.style.transitionDuration = `${duration}ms`;
-    wheelMessage.textContent = `Spinning for ${winner.prize}…`;
+    wheelMessage.textContent = `Replaying ${winner.prize}…`;
 
     if (reduceMotion) {
       rotator.style.transform = `rotate(${state.rotation}deg)`;
@@ -495,7 +495,7 @@ const startOrContinueSpin = async () => {
       state.seedSource = "";
       unlockInputs();
     }
-    wheelMessage.textContent = error instanceof Error ? error.message : "Unable to start the draw.";
+    wheelMessage.textContent = error instanceof Error ? error.message : "Unable to start the historical replay.";
     updateActionState();
   }
 };

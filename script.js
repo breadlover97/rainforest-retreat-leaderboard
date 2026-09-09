@@ -16,10 +16,10 @@ const mobileLeaderboardQuery = window.matchMedia("(max-width: 760px)");
 
 let leaderboardEntries = [];
 let leaderboardCurrentPage = 1;
-let leaderboardEmptyMessage = "No ballot entries yet.";
+let leaderboardEmptyMessage = "No ballot entries in this archived snapshot.";
 
 const formatSyncTime = (isoString) => {
-  if (!isoString) return "Not synced yet";
+  if (!isoString) return "Snapshot date unavailable";
 
   return new Intl.DateTimeFormat("en-SG", {
     dateStyle: "medium",
@@ -42,7 +42,7 @@ const scrollLeaderboardToList = () => {
   });
 };
 
-const renderTableRows = (entries, emptyMessage = "No ballot entries yet.") => {
+const renderTableRows = (entries, emptyMessage = "No ballot entries in this archived snapshot.") => {
   body.replaceChildren();
 
   if (!entries.length) {
@@ -122,23 +122,23 @@ fetch("data/leaderboard.json", { cache: "no-store" })
     renderRows(
       isAllZeroSnapshot ? [] : entries,
       isAllZeroSnapshot
-        ? "Final ballot counts are being verified. Please check back after the next update."
+        ? "This archived snapshot contains no positive ballot counts."
         : undefined,
     );
     lastSync.textContent = formatSyncTime(data.generatedAt);
     entryCount.textContent = isAllZeroSnapshot
-      ? "Verification in progress"
+      ? "No positive ballot counts"
       : `${entries.length} participant${entries.length === 1 ? "" : "s"}`;
   })
   .catch(() => {
-    lastSync.textContent = "Sync unavailable";
+    lastSync.textContent = "Snapshot unavailable";
     entryCount.textContent = "- participants";
     body.replaceChildren();
     const row = document.createElement("tr");
     const cell = document.createElement("td");
     cell.colSpan = 3;
     cell.className = "empty-state";
-    cell.textContent = "Unable to load leaderboard right now.";
+    cell.textContent = "Unable to load the archived ballot standings.";
     row.append(cell);
     body.append(row);
   });

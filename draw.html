@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rainforest Retreat — Lucky Draw Wheel</title>
+    <title>Rainforest Retreat — Archived Draw Tool</title>
     <meta
       name="description"
-      content="The auditable weighted lucky draw wheel for The Rainforest Retreat Giveaway."
+      content="Historical draw tool for the ended Rainforest Retreat Giveaway. Replay original inputs for verification; this page does not publish official results."
     />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="referrer" content="no-referrer" />
@@ -22,32 +22,32 @@
   </head>
   <body>
     <header class="draw-topbar">
-      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Leaderboard</a>
-      <span class="tool-badge"><span aria-hidden="true">✓</span> Auditable weighted draw</span>
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Campaign archive</a>
+      <span class="tool-badge"><span aria-hidden="true">✓</span> Archived draw tool</span>
     </header>
 
     <main class="draw-shell">
       <section class="draw-hero" aria-labelledby="draw-title">
         <div>
-          <p class="eyebrow">Official draw experience</p>
-          <h1 id="draw-title">Rainforest Retreat Lucky Draw</h1>
+          <p class="eyebrow">Historical verification</p>
+          <h1 id="draw-title">Rainforest Retreat Draw Archive</h1>
           <p class="hero-copy">
-            A rainforest-inspired wheel with ballot-weighted chances, unique winners and a
-            reproducible SHA-256 audit trail.
+            The campaign has ended. This tool is retained to replay historical draw inputs
+            and compare the reproducible SHA-256 audit trail with the original records.
           </p>
         </div>
         <div class="draw-date">
-          <span>Live draw</span>
+          <span>Originally scheduled draw</span>
           <strong>21 August 2026 · 8:00 pm SGT</strong>
         </div>
       </section>
 
-      <aside class="draw-warning" aria-label="Draw preparation notice">
+      <aside class="draw-warning" aria-label="Archived draw notice">
         <span aria-hidden="true">!</span>
         <p>
-          <strong>Use only after the ballot review is complete.</strong> The public leaderboard is
-          shown as a preview. An official spin requires a separately frozen CSV with stable opaque
-          participant IDs; the file stays on this device and is never uploaded.
+          <strong>Historical replay only.</strong> This page does not publish or confirm official
+          winners. Use the original frozen ballot CSV and recorded public seed to reproduce a
+          past result. The file stays on this device and is never uploaded.
         </p>
       </aside>
 
@@ -55,7 +55,7 @@
         <div class="wheel-card">
           <div class="wheel-card-heading">
             <div>
-              <p class="stage-label" id="wheel-mode">Previewing public leaderboard</p>
+              <p class="stage-label" id="wheel-mode">Viewing archived ballot snapshot</p>
               <h2 id="current-prize">Grand Prize</h2>
             </div>
             <div class="wheel-stats" aria-label="Wheel totals">
@@ -77,21 +77,21 @@
             </div>
             <button class="wheel-centre" id="wheel-spin" type="button" disabled>
               <span aria-hidden="true">🌿</span>
-              <strong>Spin</strong>
+              <strong>Replay</strong>
             </button>
           </div>
 
           <p class="wheel-message" id="wheel-message" aria-live="polite">
-            Loading the public preview…
+            Loading the archived ballot preview…
           </p>
         </div>
 
-        <aside class="control-card" aria-label="Official draw controls">
+        <aside class="control-card" aria-label="Historical replay controls">
           <section class="control-section">
             <div class="control-heading">
               <span>1</span>
               <div>
-                <h2>Load the frozen ballot file</h2>
+                <h2>Load the original frozen ballot file</h2>
                 <p>Exactly: participant_id, display_name, ballots</p>
               </div>
             </div>
@@ -117,7 +117,7 @@
               </div>
             </dl>
             <p class="commitment-note">
-              Record or publish this SHA-256 before the announced seed becomes available.
+              Compare this SHA-256 with the original commitment recorded before the seed became available.
             </p>
           </section>
 
@@ -125,8 +125,8 @@
             <div class="control-heading">
               <span>2</span>
               <div>
-                <h2>Record the public seed</h2>
-                <p>Use the value from your pre-announced source.</p>
+                <h2>Enter the recorded public seed</h2>
+                <p>Use the exact value and source recorded for the original draw.</p>
               </div>
             </div>
 
@@ -146,33 +146,33 @@
               maxlength="4096"
               spellcheck="false"
               autocomplete="off"
-              placeholder="Paste the announced value exactly"
+              placeholder="Paste the originally recorded value exactly"
             ></textarea>
-            <p class="field-note">Do not try candidate seeds against the final snapshot.</p>
+            <p class="field-note">Changing the original file or seed produces a different result.</p>
           </section>
 
           <section class="control-section run-section">
             <div class="control-heading">
               <span>3</span>
               <div>
-                <h2>Lock and reveal</h2>
-                <p>The four winners are fixed before the first animation.</p>
+                <h2>Replay and compare</h2>
+                <p>The four replay results are fixed before the first animation.</p>
               </div>
             </div>
 
             <label class="confirmation-row" for="freeze-confirmation">
               <input id="freeze-confirmation" type="checkbox" />
               <span>
-                I confirm this is the verified final list and its SHA-256 was recorded before the
-                seed became available.
+                I am using the original frozen ballot file and recorded seed for historical
+                verification. This replay does not confirm their provenance.
               </span>
             </label>
 
             <button class="primary-action" id="spin-button" type="button" disabled>
-              Spin for Grand Prize
+              Replay Grand Prize
             </button>
             <div class="secondary-actions">
-              <button id="download-audit" type="button" disabled>Download audit</button>
+              <button id="download-audit" type="button" disabled>Download replay audit</button>
               <button id="reset-draw" type="button" disabled>Reset</button>
             </div>
           </section>
@@ -182,16 +182,16 @@
       <section class="results-card" aria-labelledby="results-title">
         <div class="results-heading">
           <div>
-            <p class="eyebrow">Prize order</p>
+            <p class="eyebrow">Replay results</p>
             <h2 id="results-title">Grand first, then three gift prizes</h2>
           </div>
-          <p>Each person can win once. All their remaining tickets are skipped.</p>
+          <p>Results appear only after loading historical inputs. They are not published winner records.</p>
         </div>
         <ol class="result-list" id="result-list">
-          <li data-prize-index="0"><span>Grand Prize</span><strong>Awaiting draw</strong></li>
-          <li data-prize-index="1"><span>Gift Prize 1</span><strong>Awaiting draw</strong></li>
-          <li data-prize-index="2"><span>Gift Prize 2</span><strong>Awaiting draw</strong></li>
-          <li data-prize-index="3"><span>Gift Prize 3</span><strong>Awaiting draw</strong></li>
+          <li data-prize-index="0"><span>Grand Prize</span><strong>No replay loaded</strong></li>
+          <li data-prize-index="1"><span>Gift Prize 1</span><strong>No replay loaded</strong></li>
+          <li data-prize-index="2"><span>Gift Prize 2</span><strong>No replay loaded</strong></li>
+          <li data-prize-index="3"><span>Gift Prize 3</span><strong>No replay loaded</strong></li>
         </ol>
       </section>
 
@@ -214,12 +214,12 @@
           <article>
             <span>03</span>
             <h3>Unique winners</h3>
-            <p>The first four unique IDs receive the prizes in the published order.</p>
+            <p>The first four unique IDs are selected in the original prize order.</p>
           </article>
           <article>
             <span>04</span>
             <h3>Downloadable evidence</h3>
-            <p>The completed draw exports the input hash, seed and winning ticket hashes.</p>
+            <p>A completed replay exports the input hash, seed and selected ticket hashes for comparison.</p>
           </article>
         </div>
       </section>
@@ -227,7 +227,7 @@
 
     <dialog class="winner-dialog" id="winner-dialog" aria-labelledby="winner-prize">
       <div class="confetti" id="confetti" aria-hidden="true"></div>
-      <p class="dialog-kicker">Winner</p>
+      <p class="dialog-kicker">Replay result</p>
       <h2 id="winner-prize">Grand Prize</h2>
       <strong class="winner-name" id="winner-name">—</strong>
       <p id="winner-detail">—</p>

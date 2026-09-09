@@ -1,17 +1,22 @@
 name: Sync leaderboard
 
 on:
-  repository_dispatch:
-    types: [sheet-sync]
+  # Campaign closed: keep this workflow disabled in GitHub Actions.
+  # Manual refresh is retained only for an explicitly approved future campaign.
   workflow_dispatch:
-  schedule:
-    - cron: "0 4,16 * * *"
+    inputs:
+      refresh_archived_data:
+        description: "Confirm replacement of the archived leaderboard snapshot"
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
 jobs:
   sync:
+    if: ${{ inputs.refresh_archived_data == true }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
