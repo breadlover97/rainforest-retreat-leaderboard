@@ -31,10 +31,14 @@ and original draw records remain reviewable.
 The repository copy of Apps Script is separate from the live project bound to the campaign Sheet.
 Both copies now contain the inactive guard.
 
-The live project showed two installable triggers owned by the signed-in user, both pointing to
-`onFormSubmit`: an **On form submit** trigger and an **On open** trigger. They remain installed
-pending explicit approval for permanent deletion. Their callback is inactive; trigger removal
-has not been completed.
+On 22 September 2026, the two installable triggers owned by the signed-in user were permanently
+removed: **On form submit** and **On open**, both pointing to `onFormSubmit`. The project then
+showed **0 triggers** with no filter applied. GitHub's sync workflow was also rechecked and
+remained `disabled_manually`.
+
+This completed the trigger cleanup after an authorization-failure notification for an on-open
+invocation on 21 September. The inactive sync callback had not prevented Google from attempting
+the installed trigger. The script source, project history and campaign records were retained.
 
 The stored dispatch token, other accounts' triggers, and any additional Google-side notification
 automations have not been verified as retired. Continue the

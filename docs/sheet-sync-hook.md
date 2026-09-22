@@ -33,10 +33,13 @@ on 9 September 2026, the same false guard was saved separately in the live proje
 `onFormSubmit` verification run completed successfully at 11:30:15–11:30:16am Singapore time.
 The callback is inactive before lock acquisition, token access, or a GitHub dispatch.
 
-Two user-owned triggers still point to `onFormSubmit`: one on form submission and one on
-spreadsheet open. Permanent removal is pending the user's approval. Their callback is already
-inactive, but the trigger records are still installed. Stored token and linked Form settings
-have not been verified as cleaned up.
+On 22 September 2026, both user-owned installable triggers pointing to `onFormSubmit` were
+permanently removed: one on form submission and one on spreadsheet open. The live project showed
+**0 triggers** afterward. Removing the trigger records prevents further invocations even when
+Google rejects authorization before the inactive callback can finish.
+
+The linked Form was closed to new responses on 9 September. Stored-token retirement and any
+triggers installed by other accounts remain outside the verified cleanup.
 
 ## Google-Side Retirement
 
